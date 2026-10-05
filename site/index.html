@@ -4,218 +4,496 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>リタ株式会社｜重度障害に特化したグループホーム・重度訪問介護</title>
-<meta name="description" content="リタ株式会社は、障害支援区分4〜6の重度障害のある方の暮らしを、住まいと介護の両面から24時間365日支える障害福祉の専門会社です。">
+<meta name="description" content="リタ株式会社は、障害支援区分4〜6の重度障害のある方の暮らしを、住まいと介護の両面から24時間365日支える障害福祉の専門会社です。グループホーム・リタラスホームの見学・入居相談、採用、物件オーナー様のご相談を受け付けています。">
+<meta name="theme-color" content="#1f7a6d">
+<link rel="canonical" href="https://example.com/">
+<!-- OGP（公開時にURL・画像を差し替え） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="リタ株式会社">
+<meta property="og:title" content="リタ株式会社｜重い障害があっても、自分らしく、地域で暮らす。">
+<meta property="og:description" content="重度障害のある方の「住まい」と「介護」を一体でお届けする障害福祉の専門会社です。">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/images/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f7a6d'/%3E%3Cpath d='M32 13 12 30h6v20h28V30h6L32 13Z' fill='%23fff'/%3E%3Ccircle cx='32' cy='38' r='6' fill='%23f28c38'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "リタ株式会社",
+  "alternateName": "Rita Co., Ltd.",
+  "url": "https://example.com/",
+  "logo": "https://example.com/images/logo.png",
+  "description": "重度障害のある方の住まいと介護を24時間365日支える障害福祉の専門会社",
+  "telephone": "+81-0-0000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "530-0001",
+    "addressRegion": "大阪府",
+    "addressLocality": "大阪市北区",
+    "streetAddress": "梅田3-4-5 毎日新聞ビル2F",
+    "addressCountry": "JP"
+  }
+}
+</script>
 <style>
 :root{
-  --main:#1f7a6d;      /* 信頼のティール */
+  --main:#1f7a6d;        /* 信頼のティール */
   --main-dark:#145a50;
-  --accent:#f28c38;    /* あたたかいオレンジ */
-  --accent-dark:#d9721f;
-  --owner:#4a6fa5;     /* 家主向けブルー */
+  --main-soft:#e4f2ee;
+  --accent:#e9822c;      /* あたたかいオレンジ */
+  --accent-dark:#b85f14;
+  --accent-soft:#fdeedd;
+  --owner:#3f6496;       /* 家主向けブルー */
+  --owner-soft:#e8eef7;
   --bg:#ffffff;
-  --bg-soft:#f6f4ef;
-  --text:#2b2b2b;
-  --muted:#666;
-  --line:#e4e0d8;
-  --radius:16px;
+  --bg-soft:#f7f4ee;     /* リネンのベージュ */
+  --card:#ffffff;
+  --text:#2a2a2a;
+  --muted:#5c5c5c;
+  --line:#e6e1d7;
+  --on-main:#ffffff;
+  --hero-a:#e6f3ef;
+  --hero-b:#fdf1e4;
+  --ph-a:#cfe8e2;
+  --ph-b:#f5dcc0;
+  --foot-bg:#1b2a28;
+  --foot-text:#d6e1de;
+  --shadow:0 12px 32px rgba(31,60,55,.10);
+  --radius:20px;
+  --head-h:72px;
+  --fs:16px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#16191a; --bg-soft:#1f2324; --text:#ececec; --muted:#a8a8a8; --line:#33393a;
-    --main:#3fae9c; --main-dark:#2c8a7a;
+    --main:#4cbba8; --main-dark:#7fd3c4; --main-soft:#183631;
+    --accent:#f29a4f; --accent-dark:#f6b47a; --accent-soft:#3a2a1b;
+    --owner:#8fb0e0; --owner-soft:#1d2738;
+    --bg:#141818; --bg-soft:#1c2121; --card:#202626;
+    --text:#ececec; --muted:#b2b8b6; --line:#323a39; --on-main:#0f1716;
+    --hero-a:#16302b; --hero-b:#2d2418; --ph-a:#21413b; --ph-b:#3d3022;
+    --foot-bg:#0e1312; --shadow:0 12px 32px rgba(0,0,0,.4);
   }
 }
+:root[data-theme="dark"]{
+  --main:#4cbba8; --main-dark:#7fd3c4; --main-soft:#183631;
+  --accent:#f29a4f; --accent-dark:#f6b47a; --accent-soft:#3a2a1b;
+  --owner:#8fb0e0; --owner-soft:#1d2738;
+  --bg:#141818; --bg-soft:#1c2121; --card:#202626;
+  --text:#ececec; --muted:#b2b8b6; --line:#323a39; --on-main:#0f1716;
+  --hero-a:#16302b; --hero-b:#2d2418; --ph-a:#21413b; --ph-b:#3d3022;
+  --foot-bg:#0e1312; --shadow:0 12px 32px rgba(0,0,0,.4);
+}
+:root[data-size="large"]{--fs:19px}
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP",sans-serif;color:var(--text);background:var(--bg);line-height:1.8;font-size:16px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) + 12px);font-size:var(--fs);-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.9;letter-spacing:.02em;overflow-x:hidden}
+h1,h2,h3,.logo,.num,.nums b{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif}
 a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
-.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
-section{padding:80px 0}
-.sec-title{text-align:center;margin-bottom:48px}
-.sec-title small{display:block;color:var(--main);font-weight:700;letter-spacing:.15em;font-size:13px}
-.sec-title h2{font-size:clamp(24px,4vw,34px);font-weight:900;line-height:1.4}
-.soft{background:var(--bg-soft)}
-.note{font-size:12px;color:var(--muted)}
+.ico{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--main);color:var(--on-main);padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* ヘッダー */
-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
-.head{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-weight:900;font-size:22px;color:var(--main);display:flex;align-items:center;gap:8px}
-.logo span{font-size:11px;color:var(--muted);font-weight:500;display:block;line-height:1.2}
-nav ul{display:flex;gap:24px;list-style:none;font-size:14px;font-weight:500}
-nav a:hover{color:var(--main)}
-.head-cta{display:flex;gap:8px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;border:2px solid transparent}
-.btn-main{background:var(--main);color:#fff}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+section{padding:clamp(64px,10vw,112px) 0}
+.soft{background:var(--bg-soft)}
+.note{font-size:.75rem;color:var(--muted)}
+.sec-title{text-align:center;margin-bottom:clamp(36px,6vw,56px)}
+.sec-title small{display:inline-flex;align-items:center;gap:10px;color:var(--main);font-weight:700;letter-spacing:.2em;font-size:.8rem}
+.sec-title small::before,.sec-title small::after{content:"";width:20px;height:2px;background:currentColor;border-radius:2px}
+.sec-title h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;line-height:1.5;margin-top:6px}
+.sec-title p{color:var(--muted);margin-top:12px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 26px;border-radius:999px;font-weight:700;font-size:.95rem;line-height:1.4;transition:background .2s,transform .2s,box-shadow .2s;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--main);color:var(--on-main);box-shadow:0 6px 16px rgba(31,122,109,.25)}
 .btn-main:hover{background:var(--main-dark)}
 .btn-accent{background:var(--accent);color:#fff}
 .btn-accent:hover{background:var(--accent-dark)}
-.btn-owner{background:var(--owner);color:#fff}
-.btn-outline{border-color:var(--main);color:var(--main);background:transparent}
-.btn-sm{padding:8px 16px;font-size:13px}
-@media (max-width:960px){nav,.head-cta{display:none}}
+.btn-owner{background:var(--owner);color:var(--on-main)}
+.btn-outline{border-color:currentColor;color:var(--main);background:transparent}
+.btn-sm{min-height:40px;padding:8px 18px;font-size:.82rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btns.center{justify-content:center}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--head-h)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.4rem;color:var(--main);line-height:1}
+.logo-mark{width:38px;height:38px}
+.logo small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:.62rem;color:var(--muted);font-weight:500;margin-top:4px;letter-spacing:.04em}
+.gnav ul{display:flex;gap:20px;list-style:none;font-size:.85rem;font-weight:500;white-space:nowrap}
+.head-cta{flex-wrap:nowrap;white-space:nowrap}
+.gnav a{position:relative;padding:6px 0}
+.gnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--main);transform:scaleX(0);transition:transform .2s}
+.gnav a:hover::after{transform:scaleX(1)}
+.head-right{display:flex;align-items:center;gap:10px}
+.tools{display:flex;align-items:center;gap:4px;white-space:nowrap;font-size:.72rem;color:var(--muted)}
+.tools button{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:8px;min-width:34px;height:32px;font-weight:700;cursor:pointer;font-family:inherit}
+.tools button[aria-pressed="true"]{background:var(--main);color:var(--on-main);border-color:var(--main)}
+.menu-btn{display:none;width:48px;height:48px;border:0;background:transparent;color:var(--text);cursor:pointer;border-radius:12px}
+.menu-btn .ico{width:28px;height:28px;margin:auto}
+.drawer{display:none}
+@media (max-width:1180px){
+  .gnav,.head-cta{display:none}
+  .menu-btn{display:block}
+  .drawer{position:fixed;inset:var(--head-h) 0 0;background:var(--bg);z-index:49;padding:24px 16px 120px;overflow:auto}
+  .drawer.open{display:block}
+  .drawer ul{list-style:none;border-top:1px solid var(--line)}
+  .drawer li a{display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-bottom:1px solid var(--line);font-weight:700}
+  .drawer .btns{flex-direction:column}
+  .drawer .btns .btn{width:100%}
+}
+@media (max-width:520px){.tools .lbl{display:none}.logo small{display:none}}
 
 /* メインビジュアル */
-.hero{padding:0;background:linear-gradient(135deg,#e6f3ef 0%,#fdf1e4 100%);position:relative;overflow:hidden}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(135deg,#17302c 0%,#2e2418 100%)}}
-.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 16px}
-.hero h1{font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.4;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--main)}
-.hero p.lead{font-size:clamp(15px,2vw,18px);margin-bottom:32px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.hero-tags span{background:var(--bg);border:1px solid var(--line);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--main)}
-.hero-art{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0,#cfe8e2 60%,#a9d6cc 100%);display:flex;align-items:center;justify-content:center;position:relative}
-.hero-art::after{content:"写真：入居者様とスタッフの笑顔（差し替え）";position:absolute;bottom:18%;font-size:12px;color:#557;background:#fff9;padding:4px 10px;border-radius:8px}
-@media (max-width:860px){.hero-inner{grid-template-columns:1fr;padding:48px 16px}.hero-art{max-width:280px;margin:0 auto}}
+.hero{padding:0;background:linear-gradient(135deg,var(--hero-a) 0%,var(--hero-b) 100%);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%);right:-160px;top:-160px}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(80px,10vw,128px)}
+.hero h1{font-size:clamp(1.9rem,5vw,3.1rem);font-weight:900;line-height:1.45;margin-bottom:22px;letter-spacing:.04em}
+.hero h1 em{font-style:normal;color:var(--main);background:linear-gradient(transparent 68%,color-mix(in srgb,var(--accent) 35%,transparent) 68%)}
+.hero .lead{font-size:clamp(.95rem,2vw,1.08rem);color:var(--text)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.hero-tags span{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);padding:4px 14px;border-radius:999px;font-size:.8rem;font-weight:700;color:var(--main)}
+.hero-photo{align-items:flex-start;position:relative;aspect-ratio:4/5;max-height:560px;border-radius:200px 200px 32px 32px;overflow:hidden;box-shadow:var(--shadow)}
+.hero-badge{position:absolute;left:-12px;bottom:28px;background:var(--card);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;font-size:.8rem;line-height:1.5}
+.hero-badge b{font-family:"Zen Maru Gothic",sans-serif;font-size:1.6rem;color:var(--main);line-height:1}
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-photo{max-width:340px;width:100%;margin:0 auto;aspect-ratio:1/1}
+  .hero-badge{left:0}
+}
+
+/* 写真枠（site/images/ に画像を置くと自動で差し替わる） */
+.ph{position:relative;background:linear-gradient(135deg,var(--ph-a),var(--ph-b));background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:center}
+.ph:not(.has-img)::after{content:attr(data-label);margin:14px 12px;font-size:.72rem;color:var(--text);background:color-mix(in srgb,var(--card) 80%,transparent);padding:4px 10px;border-radius:8px;text-align:center}
+.ph:not(.has-img) .ph-icon{position:absolute;inset:0;margin:auto;width:42%;height:42%;opacity:.9}
+.ph.has-img .ph-icon{display:none}
 
 /* 3つの入口 */
-.gates{margin-top:-40px;position:relative;z-index:2}
+.gates{margin-top:-64px;position:relative;z-index:2}
 .gate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.gate{background:var(--bg);border-radius:var(--radius);padding:28px 24px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:6px solid var(--main);display:flex;flex-direction:column;gap:8px;transition:.2s}
-.gate:hover{transform:translateY(-4px)}
-.gate.recruit{border-color:var(--accent)}
-.gate.owner{border-color:var(--owner)}
-.gate .for{font-size:12px;font-weight:700;color:var(--muted)}
-.gate h3{font-size:20px;font-weight:900}
-.gate p{font-size:14px;color:var(--muted);flex:1}
-.gate .go{font-weight:700;color:var(--main)}
+.gate{--c:var(--main);--cs:var(--main-soft);background:var(--card);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:transform .25s;border:1px solid var(--line);position:relative;overflow:hidden}
+.gate::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:var(--c)}
+.gate:hover{transform:translateY(-6px)}
+.gate.recruit{--c:var(--accent);--cs:var(--accent-soft)}
+.gate.owner{--c:var(--owner);--cs:var(--owner-soft)}
+.gate .gi{width:52px;height:52px;border-radius:16px;background:var(--cs);color:var(--c);display:grid;place-items:center}
+.gate .gi .ico{width:28px;height:28px}
+.gate .for{font-size:.75rem;font-weight:700;color:var(--muted)}
+.gate h3{font-size:1.3rem;font-weight:900;line-height:1.45}
+.gate p{font-size:.88rem;color:var(--muted);flex:1}
+.gate .go{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--c)}
 .gate.recruit .go{color:var(--accent-dark)}
-.gate.owner .go{color:var(--owner)}
-@media (max-width:860px){.gate-grid{grid-template-columns:1fr}.gates{margin-top:24px}}
+@media (max-width:860px){.gate-grid{grid-template-columns:1fr}.gates{margin-top:-40px}}
+
+/* 理念・代表メッセージ */
+.message{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.message .ph{aspect-ratio:4/5;border-radius:var(--radius)}
+.message blockquote{font-family:"Zen Maru Gothic",sans-serif;font-size:clamp(1.3rem,3vw,1.75rem);font-weight:700;line-height:1.7;color:var(--main);margin-bottom:20px}
+.message p+p{margin-top:14px}
+.sign{margin-top:24px;text-align:right;font-weight:700}
+.sign small{display:block;color:var(--muted);font-weight:500;font-size:.8rem}
+@media (max-width:860px){.message{grid-template-columns:1fr;gap:32px}.message .ph{max-width:320px;width:100%;margin:0 auto}}
 
 /* 強み */
 .strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.str{text-align:center;padding:32px 20px;border-radius:var(--radius);background:var(--bg-soft)}
-.str .num{font-size:40px;font-weight:900;color:var(--main);line-height:1.2}
-.str h3{font-size:19px;margin:10px 0}
-.str p{font-size:14px;color:var(--muted);text-align:left}
+.str{padding:36px 28px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);position:relative}
+.str .num{position:absolute;top:18px;right:24px;font-size:3rem;font-weight:900;color:var(--main-soft);line-height:1}
+.str .si{width:60px;height:60px;border-radius:50%;background:var(--main-soft);color:var(--main);display:grid;place-items:center;margin-bottom:18px}
+.str .si .ico{width:30px;height:30px}
+.str h3{font-size:1.2rem;margin-bottom:10px;line-height:1.5}
+.str p{font-size:.9rem;color:var(--muted)}
 @media (max-width:860px){.strengths{grid-template-columns:1fr}}
 
 /* サービス */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.svc{background:var(--bg);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
-.svc .ph{height:180px;background:linear-gradient(135deg,#cfe8e2,#f5dcc0);display:flex;align-items:center;justify-content:center;font-size:12px;color:#556}
-.svc .body{padding:24px}
-.svc .label{display:inline-block;font-size:12px;font-weight:700;background:var(--main);color:#fff;padding:2px 10px;border-radius:6px;margin-bottom:8px}
-.svc h3{font-size:22px;margin-bottom:8px}
-.svc ul{margin:12px 0 20px 1.2em;font-size:14px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.svc{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.svc .ph{aspect-ratio:3/2}
+.svc .body{padding:28px;display:flex;flex-direction:column;flex:1}
+.svc .label{align-self:flex-start;font-size:.75rem;font-weight:700;background:var(--main-soft);color:var(--main);padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.svc h3{font-size:1.4rem;margin-bottom:8px}
+.checks{list-style:none;margin:16px 0 24px;font-size:.9rem;flex:1}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:4px 0}
+.checks .ico{color:var(--main);margin-top:.35em;width:1.05em;height:1.05em}
 @media (max-width:860px){.svc-grid{grid-template-columns:1fr}}
-.care-list{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.care-list span{border:1px solid var(--main);color:var(--main);padding:6px 16px;border-radius:999px;font-size:14px;font-weight:500}
+.care{margin-top:40px;background:var(--card);border-radius:var(--radius);padding:28px;border:1px solid var(--line);text-align:center}
+.care h3{font-size:1.05rem;margin-bottom:14px}
+.care-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;list-style:none}
+.care-list li{border:1px solid var(--main);color:var(--main);padding:6px 16px;border-radius:999px;font-size:.85rem;font-weight:700}
 
 /* 数字 */
 .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
-.nums div{padding:24px 8px;border-radius:var(--radius);background:var(--bg)}
-.nums b{display:block;font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--main);line-height:1.2}
-.nums b small{font-size:16px}
-.nums span{font-size:14px;color:var(--muted)}
+.nums div{padding:28px 8px;border-radius:var(--radius);background:var(--bg-soft)}
+.nums b{display:block;font-size:clamp(2rem,5vw,2.9rem);font-weight:900;color:var(--main);line-height:1.2}
+.nums b small{font-size:1rem;margin-left:2px}
+.nums span{font-size:.85rem;color:var(--muted)}
 @media (max-width:760px){.nums{grid-template-columns:repeat(2,1fr)}}
+
+/* 費用 */
+.cost{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+.cost table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;font-size:.92rem}
+.cost th,.cost td{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left}
+.cost th{background:var(--main-soft);color:var(--main);font-weight:700;width:42%}
+.cost tr:last-child td,.cost tr:last-child th{border-bottom:0}
+.cost td.total{font-weight:700;font-size:1.05rem}
+.cost-box{background:var(--card);border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
+.cost-box h3{font-size:1.05rem;margin-bottom:8px;display:flex;gap:8px;align-items:center;color:var(--main)}
+.cost-box p{font-size:.88rem;color:var(--muted)}
+.cost-box+.cost-box{margin-top:16px}
+@media (max-width:860px){.cost{grid-template-columns:1fr}}
 
 /* 事業所 */
 .area{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-.map{aspect-ratio:4/3;border-radius:var(--radius);background:var(--bg-soft);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
-.vacancy{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.vacancy li{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid var(--line);border-radius:12px}
-.vac-ok{background:#e3f4ec;color:#1b7a4e;font-size:12px;font-weight:700;padding:2px 10px;border-radius:6px}
-.vac-few{background:#fdf0dc;color:#b06a12;font-size:12px;font-weight:700;padding:2px 10px;border-radius:6px}
+.map{aspect-ratio:4/3;border-radius:var(--radius);background:var(--card);border:2px dashed var(--line);display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;color:var(--muted);font-size:.82rem}
+.map .ico{width:40px;height:40px;color:var(--main)}
+.vacancy{list-style:none;display:flex;flex-direction:column;gap:10px}
+.vacancy li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.vacancy small{display:block;color:var(--muted);font-size:.75rem}
+.tag{flex:none;font-size:.75rem;font-weight:700;padding:3px 12px;border-radius:999px}
+.tag-ok{background:#e1f3ea;color:#1a6f47}
+.tag-few{background:#fdeeda;color:#94540c}
 @media (max-width:860px){.area{grid-template-columns:1fr}}
 
 /* 流れ */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:step}
-.flow li{list-style:none;text-align:center;background:var(--bg);border-radius:var(--radius);padding:24px 10px;position:relative}
-.flow li::before{counter-increment:step;content:"STEP " counter(step);display:block;font-size:12px;font-weight:700;color:var(--accent-dark)}
-.flow li b{display:block;font-size:17px;margin:4px 0}
-.flow li p{font-size:13px;color:var(--muted)}
-@media (max-width:860px){.flow{grid-template-columns:1fr}}
-.center{text-align:center;margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:step;list-style:none}
+.flow li{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 12px 22px;position:relative}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-13px;top:50%;width:10px;height:10px;border-top:2px solid var(--main);border-right:2px solid var(--main);transform:translateY(-50%) rotate(45deg)}
+.flow li::before{counter-increment:step;content:"STEP " counter(step);display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--accent-dark)}
+.flow .fi{width:52px;height:52px;margin:10px auto;border-radius:50%;background:var(--main-soft);color:var(--main);display:grid;place-items:center}
+.flow b{display:block;font-size:1.05rem}
+.flow p{font-size:.8rem;color:var(--muted);margin-top:4px}
+@media (max-width:860px){
+  .flow{grid-template-columns:1fr;gap:20px}
+  .flow li{display:grid;grid-template-columns:52px 1fr;column-gap:16px;text-align:left;padding:18px 20px;align-items:center}
+  .flow li::before{grid-column:2}
+  .flow .fi{grid-row:1/4;margin:0}
+  .flow li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%) rotate(135deg)}
+}
 
-/* 採用バナー */
-.recruit-bn{background:linear-gradient(120deg,var(--accent) 0%,#f6b26b 100%);color:#fff;border-radius:24px;padding:56px 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-.recruit-bn small{font-weight:700;letter-spacing:.15em}
-.recruit-bn h2{font-size:clamp(24px,4vw,36px);font-weight:900;line-height:1.4;margin:8px 0 16px}
-.recruit-bn ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.recruit-bn ul li{background:#ffffff33;padding:4px 12px;border-radius:999px;font-size:13px}
-.recruit-bn .btn{background:#fff;color:var(--accent-dark)}
-.jobs{background:#ffffff26;border-radius:var(--radius);padding:20px}
-.jobs p{font-weight:700;margin-bottom:8px}
-.jobs li{list-style:none;border-bottom:1px solid #ffffff55;padding:6px 0;font-size:14px}
-@media (max-width:860px){.recruit-bn{grid-template-columns:1fr;padding:40px 24px}}
+/* 声 */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice{background:var(--card);border-radius:var(--radius);padding:28px;border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.voice .who{display:flex;gap:12px;align-items:center;font-size:.82rem;color:var(--muted)}
+.voice .av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--ph-a),var(--ph-b));flex:none}
+.voice .who b{display:block;color:var(--text);font-size:.92rem}
+.voice p{font-size:.9rem;flex:1}
+.voice .kind{align-self:flex-start;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--main-soft);color:var(--main)}
+.voice.staff .kind{background:var(--accent-soft);color:var(--accent-dark)}
+@media (max-width:860px){.voices{grid-template-columns:1fr}}
 
-/* 家主バナー */
-.owner-bn{border:2px solid var(--owner);border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-.owner-bn small{color:var(--owner);font-weight:700;letter-spacing:.15em}
-.owner-bn h2{font-size:clamp(22px,3.5vw,32px);font-weight:900;line-height:1.4;margin:8px 0 16px}
+/* 採用 */
+.recruit-bn{background:linear-gradient(120deg,#e07a26 0%,#f0a35a 100%);color:#fff;border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;align-items:stretch}
+.recruit-bn .txt{padding:clamp(36px,6vw,64px)}
+.recruit-bn small{font-weight:700;letter-spacing:.2em}
+.recruit-bn h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.45;margin:8px 0 16px}
+.recruit-bn .perks{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
+.recruit-bn .perks li{background:#ffffff2e;padding:4px 14px;border-radius:999px;font-size:.82rem;font-weight:700}
+.recruit-bn .btn{background:#fff;color:#a4520f}
+.recruit-side{background:#00000014;padding:clamp(28px,5vw,48px);display:flex;flex-direction:column;justify-content:center}
+.recruit-side p{font-weight:700;margin-bottom:8px}
+.recruit-side ul{list-style:none}
+.recruit-side li{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff55;padding:12px 0;font-size:.92rem}
+@media (max-width:860px){.recruit-bn{grid-template-columns:1fr;border-radius:24px}}
+
+/* 家主 */
+.owner-bn{background:var(--card);border:2px solid var(--owner);border-radius:32px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.owner-bn small{color:var(--owner);font-weight:700;letter-spacing:.2em}
+.owner-bn h2{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:900;line-height:1.5;margin:8px 0 16px}
 .merits{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.merits div{background:var(--bg-soft);border-radius:12px;padding:16px}
+.merits div{background:var(--owner-soft);border-radius:16px;padding:18px}
+.merits .ico{color:var(--owner);width:26px;height:26px;margin-bottom:6px}
 .merits b{display:block;color:var(--owner)}
-.merits span{font-size:13px;color:var(--muted)}
-@media (max-width:860px){.owner-bn{grid-template-columns:1fr;padding:32px 20px}}
+.merits span{font-size:.82rem;color:var(--muted)}
+.btn-owner-outline{border-color:var(--owner);color:var(--owner);background:transparent}
+@media (max-width:860px){.owner-bn{grid-template-columns:1fr}}
+@media (max-width:420px){.merits{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:20px 56px 20px 20px;font-weight:700;position:relative;display:flex;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;font-family:"Zen Maru Gothic",sans-serif;color:var(--main);font-weight:900}
+.faq summary::after{content:"";position:absolute;right:24px;top:50%;width:10px;height:10px;border-right:2px solid var(--main);border-bottom:2px solid var(--main);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .a{padding:0 20px 20px 46px;color:var(--muted);font-size:.92rem;position:relative}
+.faq .a::before{content:"A";position:absolute;left:20px;font-family:"Zen Maru Gothic",sans-serif;color:var(--accent-dark);font-weight:900}
 
 /* お知らせ */
-.news{list-style:none;max-width:800px;margin:0 auto}
-.news li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.news time{color:var(--muted);font-size:14px}
-.news .cat{font-size:12px;background:var(--main);color:#fff;padding:2px 10px;border-radius:6px;height:fit-content}
+.news{list-style:none;max-width:840px;margin:0 auto}
+.news li a{display:flex;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line);flex-wrap:wrap;align-items:center}
+.news li a:hover span:last-child{color:var(--main)}
+.news time{color:var(--muted);font-size:.85rem}
+.news .cat{font-size:.72rem;background:var(--main-soft);color:var(--main);font-weight:700;padding:2px 10px;border-radius:999px}
+
+/* お問い合わせ */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.tel-box{background:var(--main);color:var(--on-main);border-radius:var(--radius);padding:32px}
+.tel-box p{font-size:.9rem}
+.tel-box a.tel{display:flex;align-items:center;gap:10px;font-family:"Zen Maru Gothic",sans-serif;font-size:clamp(1.7rem,4vw,2.2rem);font-weight:900;margin:8px 0}
+.tel-box small{opacity:.85}
+.tel-box + .tel-box{margin-top:16px;background:var(--card);color:var(--text);border:1px solid var(--line)}
+form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,4vw,36px);display:grid;gap:18px}
+.field label,.field legend{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.req{font-size:.68rem;background:var(--accent);color:#fff;padding:1px 8px;border-radius:4px;margin-left:6px;vertical-align:2px}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--main);border-color:var(--main)}
+fieldset{border:0}
+.radios{display:flex;flex-wrap:wrap;gap:8px}
+.radios label{display:inline-flex;align-items:center;gap:6px;font-weight:500;margin:0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;cursor:pointer}
+.radios input{width:auto;accent-color:var(--main)}
+.form-msg{display:none;background:var(--main-soft);color:var(--main);padding:12px 16px;border-radius:10px;font-weight:700}
+.form-msg.show{display:block}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
 
 /* フッター */
-footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
-.foot{display:grid;grid-template-columns:1.2fr 2fr;gap:40px}
+footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font-size:.88rem}
+.foot{display:grid;grid-template-columns:1.1fr 2fr;gap:48px}
 .foot .logo{color:#fff}
-.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.foot-links p{font-weight:700;color:#fff;margin-bottom:6px}
-.foot-links a{display:block;opacity:.8;padding:2px 0}
-.copy{text-align:center;margin-top:40px;opacity:.6;font-size:12px}
-@media (max-width:760px){.foot,.foot-links{grid-template-columns:1fr}}
+.foot .logo small{color:var(--foot-text)}
+.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.foot-links p{font-weight:700;color:#fff;margin-bottom:8px}
+.foot-links a{display:block;opacity:.8;padding:3px 0}
+.foot-links a:hover{opacity:1;text-decoration:underline}
+.copy{text-align:center;margin-top:48px;opacity:.6;font-size:.75rem}
+@media (max-width:760px){.foot,.foot-links{grid-template-columns:1fr}footer{padding-bottom:110px}}
+
+/* トップへ戻る */
+.to-top{position:fixed;right:16px;bottom:24px;width:48px;height:48px;border-radius:50%;background:var(--main);color:var(--on-main);display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+.to-top.show{opacity:1;pointer-events:auto}
 
 /* スマホ固定CTA */
 .fixed-cta{display:none}
-@media (max-width:960px){
+@media (max-width:860px){
   .fixed-cta{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;bottom:0;left:0;right:0;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.12)}
-  .fixed-cta a{padding:12px 4px;text-align:center;color:#fff;font-weight:700;font-size:13px;line-height:1.3}
-  .fixed-cta a:nth-child(1){background:var(--main-dark)}
-  .fixed-cta a:nth-child(2){background:var(--main)}
-  .fixed-cta a:nth-child(3){background:var(--accent)}
+  .fixed-cta a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;color:#fff;font-weight:700;font-size:.75rem;line-height:1.3}
+  .fixed-cta a:nth-child(1){background:#145a50}
+  .fixed-cta a:nth-child(2){background:#1f7a6d}
+  .fixed-cta a:nth-child(3){background:#c96a1c}
+  .to-top{bottom:84px}
+}
+
+/* ふわっと表示 */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.gate{transition:none}
 }
 </style>
 </head>
 <body>
 
+<!-- アイコン（SVGスプライト） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M17 6l3 3M14.5 8.5l2 2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-medical" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 20V6M2 16h20v4M22 16v-4a3 3 0 0 0-3-3h-8v7"/><circle cx="6.5" cy="11.5" r="2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24"><path d="M6 3l6 8 6-8M12 11v10M7 13h10M7 17h10"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L22 14l-8 8-2.3-2.3a4 4 0 0 0-5-5L2 10l8-8Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+</svg>
+
+<a href="#main" class="skip">本文へスキップ</a>
+
 <header>
   <div class="wrap head">
-    <a href="#" class="logo">リタ<span>リタ株式会社<br>重度障害者の暮らしの専門会社</span></a>
-    <nav><ul>
+    <a href="#" class="logo" aria-label="リタ株式会社 トップへ">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#1f7a6d"/><path d="M32 13 12 30h6v20h28V30h6L32 13Z" fill="#fff"/><circle cx="32" cy="38" r="6" fill="#f28c38"/></svg>
+      <span>リタ<small>重度障害のある方の暮らしの専門会社</small></span>
+    </a>
+    <nav class="gnav" aria-label="グローバルナビゲーション"><ul>
       <li><a href="#about">リタについて</a></li>
       <li><a href="#service">サービス</a></li>
+      <li><a href="#cost">費用</a></li>
       <li><a href="#area">事業所一覧</a></li>
       <li><a href="#flow">ご利用の流れ</a></li>
       <li><a href="#recruit">採用情報</a></li>
-      <li><a href="#owner">物件オーナー様へ</a></li>
+      <li><a href="#owner">オーナー様へ</a></li>
     </ul></nav>
-    <div class="head-cta">
-      <a href="#contact" class="btn btn-main btn-sm">見学・入居相談</a>
-      <a href="#recruit" class="btn btn-accent btn-sm">応募する</a>
+    <div class="head-right">
+      <div class="tools" role="group" aria-label="文字サイズ">
+        <span class="lbl">文字</span>
+        <button type="button" data-size="normal" aria-pressed="true">標準</button>
+        <button type="button" data-size="large" aria-pressed="false">大</button>
+      </div>
+      <div class="head-cta btns" style="margin:0">
+        <a href="#contact" class="btn btn-main btn-sm">見学・入居相談</a>
+        <a href="#recruit" class="btn btn-accent btn-sm">応募する</a>
+      </div>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
     </div>
   </div>
 </header>
 
+<nav id="drawer" class="drawer" aria-label="スマートフォン用メニュー">
+  <ul>
+    <li><a href="#about">リタについて<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#service">サービス<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#cost">費用の目安<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#area">事業所一覧・空室情報<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#flow">ご利用の流れ<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#faq">よくあるご質問<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#recruit">採用情報<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+    <li><a href="#owner">物件オーナー様へ<svg class="ico"><use href="#i-arrow"/></svg></a></li>
+  </ul>
+  <div class="btns">
+    <a href="#contact" class="btn btn-main">見学・入居のご相談</a>
+    <a href="tel:0000000000" class="btn btn-outline"><svg class="ico"><use href="#i-phone"/></svg>00-0000-0000</a>
+  </div>
+</nav>
+
+<main id="main">
+
 <!-- メインビジュアル -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <div>
-      <div class="hero-tags"><span>障害支援区分4〜6</span><span>24時間365日</span><span>医療的ケア対応</span></div>
+    <div class="reveal">
+      <div class="hero-tags">
+        <span><svg class="ico"><use href="#i-heart"/></svg>障害支援区分4〜6</span>
+        <span><svg class="ico"><use href="#i-clock"/></svg>24時間365日</span>
+        <span><svg class="ico"><use href="#i-medical"/></svg>医療的ケア対応</span>
+      </div>
       <h1>重い障害があっても、<br><em>自分らしく</em>、<br>地域で暮らす。</h1>
-      <p class="lead">リタ株式会社は、重度障害のある方の「住まい」と「介護」を一体でお届けする障害福祉の専門会社です。<br>グループホームと重度訪問介護で、24時間の暮らしを支えます。</p>
-      <div class="center" style="justify-content:flex-start;margin-top:0">
-        <a href="#contact" class="btn btn-main">見学・入居のご相談</a>
-        <a href="tel:0000000000" class="btn btn-outline">お電話でのご相談</a>
+      <p class="lead">リタ株式会社は、重度障害のある方の「住まい」と「介護」を一体でお届けする障害福祉の専門会社です。グループホームと重度訪問介護で、24時間の暮らしを支えます。</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-main">見学・入居のご相談<svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="tel:0000000000" class="btn btn-outline"><svg class="ico"><use href="#i-phone"/></svg>お電話でのご相談</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg width="55%" viewBox="0 0 120 120" fill="none"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
+    <div class="reveal" style="position:relative">
+      <div class="hero-photo ph" data-img="images/hero.jpg" data-label="写真：入居者様とスタッフの笑顔（images/hero.jpg）" role="img" aria-label="入居者様とスタッフが笑い合う様子">
+        <svg class="ph-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
+      </div>
+      <div class="hero-badge"><b>24h</b><span>夜間もスタッフが常駐<br>365日の安心を</span></div>
     </div>
   </div>
 </section>
@@ -223,77 +501,111 @@ footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
 <!-- 3つの入口 -->
 <div class="wrap gates">
   <div class="gate-grid">
-    <a href="#service" class="gate">
+    <a href="#service" class="gate reveal">
+      <span class="gi"><svg class="ico"><use href="#i-home"/></svg></span>
       <span class="for">ご本人・ご家族・相談支援専門員の方</span>
       <h3>ご利用・ご入居を<br>お考えの方</h3>
       <p>空室状況・費用の目安・医療的ケアの対応範囲をご確認いただけます。</p>
-      <span class="go">詳しく見る →</span>
+      <span class="go">詳しく見る<svg class="ico"><use href="#i-arrow"/></svg></span>
     </a>
-    <a href="#recruit" class="gate recruit">
+    <a href="#recruit" class="gate recruit reveal">
+      <span class="gi"><svg class="ico"><use href="#i-users"/></svg></span>
       <span class="for">介護職・看護師・管理者を目指す方</span>
       <h3>採用情報</h3>
-      <p>未経験から重度ケアのプロへ。資格取得支援・明確なキャリアパスがあります。</p>
-      <span class="go">募集職種を見る →</span>
+      <p>未経験から重度ケアのプロへ。資格取得支援と明確なキャリアパスがあります。</p>
+      <span class="go">募集職種を見る<svg class="ico"><use href="#i-arrow"/></svg></span>
     </a>
-    <a href="#owner" class="gate owner">
+    <a href="#owner" class="gate owner reveal">
+      <span class="gi"><svg class="ico"><use href="#i-key"/></svg></span>
       <span class="for">空き家・アパートをお持ちの方</span>
       <h3>物件オーナー様へ</h3>
       <p>グループホームとして一括借上げ。長期・安定した賃料収入を実現します。</p>
-      <span class="go">物件を紹介する →</span>
+      <span class="go">物件を紹介する<svg class="ico"><use href="#i-arrow"/></svg></span>
     </a>
   </div>
 </div>
 
-<!-- 強み -->
+<!-- 代表メッセージ -->
 <section id="about">
+  <div class="wrap message">
+    <div class="ph reveal" data-img="images/ceo.jpg" data-label="写真：代表（images/ceo.jpg）" role="img" aria-label="代表取締役の写真">
+      <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+    </div>
+    <div class="reveal">
+      <div class="sec-title" style="text-align:left;margin-bottom:24px"><small>MESSAGE</small><h2>代表メッセージ</h2></div>
+      <blockquote>「重度だから、あきらめる」<br>そんな社会を、変えていきたい。</blockquote>
+      <p>障害が重いほど、地域で暮らせる場所は限られてしまう——。それが、私たちが向き合ってきた現実です。</p>
+      <p>株式会社Starsと株式会社リタラスは、ひとつになり「リタ株式会社」として新たなスタートを切りました。グループホームの「住まい」と、重度訪問介護の「介護」。ふたつの力を合わせ、どんなに重い障害があっても、その人らしい毎日を地域で続けられる社会をつくります。</p>
+      <p class="sign"><small>リタ株式会社 代表取締役</small>〇〇 〇〇</p>
+    </div>
+  </div>
+</section>
+
+<!-- 強み -->
+<section class="soft">
   <div class="wrap">
-    <div class="sec-title"><small>OUR STRENGTH</small><h2>リタが「重度障害」に<br>特化する理由</h2></div>
+    <div class="sec-title reveal"><small>OUR STRENGTH</small><h2>リタが「重度障害」に<br>特化する理由</h2></div>
     <div class="strengths">
-      <div class="str"><div class="num">01</div><h3>支援区分4〜6に特化</h3><p>受け入れ先が見つかりにくい重度障害の方こそ、地域で暮らせる場所が必要です。私たちは重度の方の支援を専門としています。</p></div>
-      <div class="str"><div class="num">02</div><h3>24時間365日の支援</h3><p>夜間も職員が常駐。グループホームと重度訪問介護を組み合わせ、一人ひとりの支給決定に合わせたマンツーマンケアを行います。</p></div>
-      <div class="str"><div class="num">03</div><h3>医療的ケアに対応</h3><p>喀痰吸引等研修を修了したスタッフが在籍。痰の吸引や経管栄養（胃ろう等）にも、体制の範囲内で対応します。</p></div>
+      <div class="str reveal"><span class="num" aria-hidden="true">01</span><div class="si"><svg class="ico"><use href="#i-heart"/></svg></div><h3>支援区分4〜6に特化</h3><p>受け入れ先が見つかりにくい重度障害の方こそ、地域で暮らせる場所が必要です。私たちは重度の方の支援を専門としています。</p></div>
+      <div class="str reveal"><span class="num" aria-hidden="true">02</span><div class="si"><svg class="ico"><use href="#i-clock"/></svg></div><h3>24時間365日の支援</h3><p>夜間も職員が常駐。グループホームと重度訪問介護を組み合わせ、一人ひとりの支給決定に合わせたマンツーマンケアを行います。</p></div>
+      <div class="str reveal"><span class="num" aria-hidden="true">03</span><div class="si"><svg class="ico"><use href="#i-medical"/></svg></div><h3>医療的ケアに対応</h3><p>喀痰吸引等研修を修了したスタッフが在籍。痰の吸引や経管栄養（胃ろう等）にも、体制の範囲内で対応します。</p></div>
     </div>
   </div>
 </section>
 
 <!-- サービス -->
-<section id="service" class="soft">
+<section id="service">
   <div class="wrap">
-    <div class="sec-title"><small>SERVICE</small><h2>2つの住まいのかたち</h2></div>
+    <div class="sec-title reveal"><small>SERVICE</small><h2>2つの住まいのかたち</h2><p>ご本人の状態やご希望に合わせて、最適な暮らし方をご提案します。</p></div>
     <div class="svc-grid">
-      <div class="svc">
-        <div class="ph">写真：グループホーム外観・居室（差し替え）</div>
+      <article class="svc reveal">
+        <div class="ph" data-img="images/service-gh.jpg" data-label="写真：グループホーム外観（images/service-gh.jpg）" role="img" aria-label="グループホームの外観">
+          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg>
+        </div>
         <div class="body">
           <span class="label">共同生活援助</span>
           <h3>重度障害者向けグループホーム</h3>
           <p>少人数で暮らす家庭的な住まい。生活支援員・世話人が24時間体制で日常生活をサポートします。</p>
-          <ul><li>障害支援区分4〜6の方が対象</li><li>日中サービス支援型にも対応（※要確認）</li><li>食事・入浴・排せつ・服薬などの支援</li></ul>
-          <a href="#" class="btn btn-outline btn-sm">グループホームについて</a>
+          <ul class="checks">
+            <li><svg class="ico"><use href="#i-check"/></svg>障害支援区分4〜6の方が対象</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>日中サービス支援型にも対応（※要確認）</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>食事・入浴・排せつ・服薬などの支援</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-sm">グループホームについて<svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
-      </div>
-      <div class="svc">
-        <div class="ph">写真：リタラスホームの居室・ケアの様子（差し替え）</div>
+      </article>
+      <article class="svc reveal">
+        <div class="ph" data-img="images/service-ritarasu.jpg" data-label="写真：リタラスホームの居室（images/service-ritarasu.jpg）" role="img" aria-label="リタラスホームの居室とケアの様子">
+          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><path d="M2 20V6M2 16h20v4M22 16v-4a3 3 0 0 0-3-3h-8v7"/><circle cx="6.5" cy="11.5" r="2"/></svg>
+        </div>
         <div class="body">
           <span class="label">住まい＋重度訪問介護</span>
           <h3>リタラスホーム</h3>
           <p>安心して暮らせる「住まい」と、居宅介護・重度訪問介護を組み合わせた新しいかたちの住まいです。</p>
-          <ul><li>介護有資格者を中心としたスタッフが常駐</li><li>支給決定に応じたマンツーマンケア</li><li>医療的ケアが必要な方もご相談ください</li></ul>
-          <a href="#" class="btn btn-outline btn-sm">リタラスホームについて</a>
+          <ul class="checks">
+            <li><svg class="ico"><use href="#i-check"/></svg>介護有資格者を中心としたスタッフが常駐</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>支給決定に応じたマンツーマンケア</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>医療的ケアが必要な方もご相談ください</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-sm">リタラスホームについて<svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
-      </div>
+      </article>
     </div>
-    <div class="care-list" aria-label="対応可能なケア">
-      <span>喀痰吸引</span><span>経管栄養（胃ろう等）</span><span>服薬管理</span><span>見守り・夜間支援</span><span>コミュニケーション支援</span><span>通院同行</span>
+    <div class="care reveal">
+      <h3>対応可能なケア</h3>
+      <ul class="care-list">
+        <li>喀痰吸引</li><li>経管栄養（胃ろう等）</li><li>服薬管理</li><li>見守り・夜間支援</li><li>コミュニケーション支援</li><li>通院同行</li>
+      </ul>
     </div>
-    <div class="center"><a href="#" class="btn btn-main">どちらが合う？サービスの選び方</a></div>
+    <div class="btns center"><a href="#" class="btn btn-main">どちらが合う？サービスの選び方<svg class="ico"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
 <!-- 数字で見るリタ -->
-<section>
+<section class="soft" style="padding-top:clamp(48px,8vw,80px);padding-bottom:clamp(48px,8vw,80px)">
   <div class="wrap">
-    <div class="sec-title"><small>NUMBERS</small><h2>数字で見るリタ</h2></div>
-    <div class="nums soft" style="padding:16px;border-radius:24px">
+    <div class="sec-title reveal"><small>NUMBERS</small><h2>数字で見るリタ</h2></div>
+    <div class="nums reveal" style="--bg-soft:var(--card)">
       <div><b>00<small>拠点</small></b><span>事業所数</span></div>
       <div><b>000<small>名</small></b><span>ご入居者・ご利用者</span></div>
       <div><b>000<small>名</small></b><span>スタッフ数</span></div>
@@ -303,20 +615,50 @@ footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
   </div>
 </section>
 
+<!-- 費用の目安 -->
+<section id="cost">
+  <div class="wrap">
+    <div class="sec-title reveal"><small>COST</small><h2>費用の目安（グループホーム）</h2><p>月々のご負担は、障害年金の範囲内で暮らせることを目指しています。</p></div>
+    <div class="cost">
+      <div class="reveal">
+        <table>
+          <caption class="sr">グループホームの月額費用の目安</caption>
+          <tr><th scope="row">家賃</th><td>〇〇,〇〇〇円</td></tr>
+          <tr><th scope="row">食費</th><td>〇〇,〇〇〇円</td></tr>
+          <tr><th scope="row">水道光熱費</th><td>〇〇,〇〇〇円</td></tr>
+          <tr><th scope="row">日用品費など</th><td>〇,〇〇〇円</td></tr>
+          <tr><th scope="row">合計（月額）</th><td class="total">〇〇,〇〇〇円</td></tr>
+        </table>
+        <p class="note" style="margin-top:10px">※事業所により異なります。金額は実際の料金に差し替えてください。</p>
+      </div>
+      <div class="reveal">
+        <div class="cost-box">
+          <h3><svg class="ico"><use href="#i-yen"/></svg>家賃の補助があります</h3>
+          <p>グループホームにお住まいの方は、条件により家賃の一部について補助（特定障害者特別給付費）を受けられる場合があります。</p>
+        </div>
+        <div class="cost-box">
+          <h3><svg class="ico"><use href="#i-shield"/></svg>サービス利用料について</h3>
+          <p>障害福祉サービスの利用者負担は、世帯の所得に応じて上限額が決まっています。多くの方が自己負担0円でご利用されています。詳しくはお気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 事業所・空室 -->
 <section id="area" class="soft">
   <div class="wrap">
-    <div class="sec-title"><small>LOCATION</small><h2>事業所一覧・空室情報</h2></div>
+    <div class="sec-title reveal"><small>LOCATION</small><h2>事業所一覧・空室情報</h2></div>
     <div class="area">
-      <div class="map">地図（Googleマップ埋め込み／エリア検索）</div>
-      <div>
+      <div class="map reveal"><svg class="ico"><use href="#i-pin"/></svg>地図（Googleマップ埋め込み／エリア検索）</div>
+      <div class="reveal">
         <ul class="vacancy">
-          <li><span>大阪市北区エリア　〇〇ホーム</span><span class="vac-ok">空室あり</span></li>
-          <li><span>〇〇市エリア　〇〇ホーム</span><span class="vac-few">残りわずか</span></li>
-          <li><span>〇〇市エリア　リタラスホーム〇〇</span><span class="vac-ok">空室あり</span></li>
+          <li><span>〇〇ホーム<small>大阪市北区エリア ｜ グループホーム</small></span><span class="tag tag-ok">空室あり</span></li>
+          <li><span>〇〇ホーム<small>〇〇市エリア ｜ グループホーム</small></span><span class="tag tag-few">残りわずか</span></li>
+          <li><span>リタラスホーム〇〇<small>〇〇市エリア ｜ 住まい＋重度訪問介護</small></span><span class="tag tag-ok">空室あり</span></li>
         </ul>
-        <p class="note">※サンプル表示です。空室状況は随時更新します。</p>
-        <div class="center" style="justify-content:flex-start">
+        <p class="note" style="margin-top:10px">※サンプル表示です。空室状況は随時更新します。</p>
+        <div class="btns">
           <a href="#" class="btn btn-main">すべての事業所を見る</a>
           <a href="#" class="btn btn-outline">相談支援専門員・医療機関の方へ</a>
         </div>
@@ -328,40 +670,65 @@ footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
 <!-- ご利用の流れ -->
 <section id="flow">
   <div class="wrap">
-    <div class="sec-title"><small>FLOW</small><h2>ご利用までの流れ</h2></div>
-    <ol class="flow soft" style="padding:16px;border-radius:24px">
-      <li><b>ご相談</b><p>お電話・フォームからお気軽に</p></li>
-      <li><b>見学</b><p>住まいとスタッフをご覧ください</p></li>
-      <li><b>体験入居</b><p>実際の暮らしをお試し</p></li>
-      <li><b>ご契約</b><p>支給決定・契約手続き</p></li>
-      <li><b>ご入居</b><p>新しい暮らしのスタート</p></li>
+    <div class="sec-title reveal"><small>FLOW</small><h2>ご利用までの流れ</h2><p>はじめての方も安心してご相談ください。手続きもスタッフがサポートします。</p></div>
+    <ol class="flow reveal">
+      <li><span class="fi"><svg class="ico"><use href="#i-chat"/></svg></span><b>ご相談</b><p>お電話・フォームからお気軽に</p></li>
+      <li><span class="fi"><svg class="ico"><use href="#i-eye"/></svg></span><b>見学</b><p>住まいとスタッフをご覧ください</p></li>
+      <li><span class="fi"><svg class="ico"><use href="#i-bed"/></svg></span><b>体験入居</b><p>実際の暮らしをお試し</p></li>
+      <li><span class="fi"><svg class="ico"><use href="#i-doc"/></svg></span><b>ご契約</b><p>支給決定・契約手続き</p></li>
+      <li><span class="fi"><svg class="ico"><use href="#i-home"/></svg></span><b>ご入居</b><p>新しい暮らしのスタート</p></li>
     </ol>
-    <div class="center">
-      <a href="#contact" class="btn btn-main">見学・入居のご相談</a>
-      <a href="#" class="btn btn-outline">よくあるご質問</a>
+    <div class="btns center">
+      <a href="#contact" class="btn btn-main">見学・入居のご相談<svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#faq" class="btn btn-outline">よくあるご質問</a>
     </div>
+  </div>
+</section>
+
+<!-- 声 -->
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-title reveal"><small>VOICE</small><h2>ご家族・スタッフの声</h2></div>
+    <div class="voices">
+      <div class="voice reveal">
+        <span class="kind">ご家族の声</span>
+        <p>（掲載例）医療的ケアが必要な息子を受け入れてくれる場所がなかなか見つからず、不安な毎日でした。今は息子が笑顔で過ごしているのが何よりうれしいです。</p>
+        <div class="who"><span class="av"></span><span><b>〇〇様</b>ご入居者のお母様</span></div>
+      </div>
+      <div class="voice reveal">
+        <span class="kind">相談支援専門員の声</span>
+        <p>（掲載例）区分6の方でも、支給決定に合わせて柔軟に体制を組んでくださるので、安心してご紹介できます。連絡もこまめで助かっています。</p>
+        <div class="who"><span class="av"></span><span><b>〇〇様</b>相談支援専門員</span></div>
+      </div>
+      <div class="voice staff reveal">
+        <span class="kind">スタッフの声</span>
+        <p>（掲載例）介護未経験で入社しましたが、研修で喀痰吸引の資格も取れました。言葉がなくても、表情で気持ちが通じ合えた瞬間がやりがいです。</p>
+        <div class="who"><span class="av"></span><span><b>〇〇さん</b>生活支援員・入社2年目</span></div>
+      </div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:16px">※掲載例です。実際のお声（掲載許可済み）に差し替えてください。</p>
   </div>
 </section>
 
 <!-- 採用 -->
 <section id="recruit">
   <div class="wrap">
-    <div class="recruit-bn">
-      <div>
+    <div class="recruit-bn reveal">
+      <div class="txt">
         <small>RECRUIT</small>
         <h2>未経験から、<br>重度ケアのプロへ。</h2>
-        <p style="margin-bottom:16px">「ありがとう」が毎日聞こえる仕事です。リタでは喀痰吸引等研修などの資格取得を全面サポート。管理者・エリアマネージャーへのキャリアパスも明確です。</p>
-        <ul><li>資格取得支援</li><li>夜勤専従OK</li><li>未経験歓迎</li><li>管理職登用あり</li></ul>
-        <a href="#" class="btn">募集要項・応募はこちら</a>
+        <p>「ありがとう」が毎日聞こえる仕事です。リタでは喀痰吸引等研修などの資格取得を全面サポート。管理者・エリアマネージャーへのキャリアパスも明確です。</p>
+        <ul class="perks"><li>資格取得支援</li><li>夜勤専従OK</li><li>未経験歓迎</li><li>管理職登用あり</li></ul>
+        <a href="#" class="btn">募集要項・応募はこちら<svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="jobs">
+      <div class="recruit-side">
         <p>募集職種</p>
         <ul>
-          <li>生活支援員・世話人</li>
-          <li>重度訪問介護ヘルパー</li>
-          <li>看護師</li>
-          <li>サービス管理責任者</li>
-          <li>管理者・エリアマネージャー</li>
+          <li>生活支援員・世話人<svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li>重度訪問介護ヘルパー<svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li>看護師<svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li>サービス管理責任者<svg class="ico"><use href="#i-arrow"/></svg></li>
+          <li>管理者・エリアマネージャー<svg class="ico"><use href="#i-arrow"/></svg></li>
         </ul>
       </div>
     </div>
@@ -371,62 +738,213 @@ footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
 <!-- 家主募集 -->
 <section id="owner" style="padding-top:0">
   <div class="wrap">
-    <div class="owner-bn">
+    <div class="owner-bn reveal">
       <div>
         <small>FOR OWNERS</small>
         <h2>空き家・空室を、<br>グループホームとして<br>活用しませんか。</h2>
-        <p style="margin-bottom:20px">リタが一括で借り上げ、障害のある方の住まいとして運営します。社会貢献と安定収入を両立できる不動産活用です。</p>
-        <div class="center" style="justify-content:flex-start">
-          <a href="#" class="btn btn-owner">物件を紹介する（写真1枚からOK）</a>
-          <a href="#" class="btn btn-outline" style="border-color:var(--owner);color:var(--owner)">不動産会社様はこちら</a>
+        <p>リタが一括で借り上げ、障害のある方の住まいとして運営します。社会貢献と安定収入を両立できる不動産活用です。</p>
+        <div class="btns">
+          <a href="#contact" class="btn btn-owner">物件を紹介する（写真1枚からOK）</a>
+          <a href="#contact" class="btn btn-owner-outline">不動産会社様はこちら</a>
         </div>
       </div>
       <div class="merits">
-        <div><b>一括借上げ</b><span>空室リスクを気にせず安定収入</span></div>
-        <div><b>長期契約</b><span>長期間の賃貸借契約が基本</span></div>
-        <div><b>社会貢献</b><span>地域の福祉インフラに</span></div>
-        <div><b>改修のご相談</b><span>必要な改修もご提案します</span></div>
+        <div><svg class="ico"><use href="#i-key"/></svg><b>一括借上げ</b><span>空室リスクを気にせず安定収入</span></div>
+        <div><svg class="ico"><use href="#i-doc"/></svg><b>長期契約</b><span>長期間の賃貸借契約が基本</span></div>
+        <div><svg class="ico"><use href="#i-heart"/></svg><b>社会貢献</b><span>地域の福祉インフラに</span></div>
+        <div><svg class="ico"><use href="#i-tool"/></svg><b>改修のご相談</b><span>必要な改修もご提案します</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="soft">
+  <div class="wrap">
+    <div class="sec-title reveal"><small>FAQ</small><h2>よくあるご質問</h2></div>
+    <div class="faq reveal">
+      <details>
+        <summary>どのような方が入居できますか？</summary>
+        <div class="a">主に障害支援区分4〜6の重度障害のある方を対象としています。身体障害・知的障害・精神障害など、障害の種別は問いません。まずはお気軽にご相談ください。</div>
+      </details>
+      <details>
+        <summary>医療的ケア（痰の吸引・胃ろう）が必要でも大丈夫ですか？</summary>
+        <div class="a">喀痰吸引等研修を修了したスタッフが在籍しており、体制の範囲内で対応しています。対応可否は事業所やご状態によって異なるため、見学・面談の際に詳しく確認させていただきます。</div>
+      </details>
+      <details>
+        <summary>見学や体験入居はできますか？</summary>
+        <div class="a">はい、可能です。実際の住まいの雰囲気やスタッフの様子をご覧いただいたうえで、体験入居で暮らしをお試しいただけます。</div>
+      </details>
+      <details>
+        <summary>入居までにどのくらいの期間がかかりますか？</summary>
+        <div class="a">支給決定の手続き状況などにより異なりますが、ご相談から入居まで1〜3か月程度が目安です（※要確認）。お急ぎの場合もご相談ください。</div>
+      </details>
+      <details>
+        <summary>家族が面会に行くことはできますか？</summary>
+        <div class="a">もちろん可能です。ご家族とのつながりも大切な暮らしの一部と考えています。面会の時間などは各事業所にお問い合わせください。</div>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- お知らせ -->
-<section class="soft">
+<section>
   <div class="wrap">
-    <div class="sec-title"><small>NEWS</small><h2>お知らせ</h2></div>
-    <ul class="news">
-      <li><time>2026.00.00</time><span class="cat">お知らせ</span><a href="#">株式会社Starsと株式会社リタラスが統合し「リタ株式会社」となりました</a></li>
-      <li><time>2026.00.00</time><span class="cat">採用</span><a href="#">合同説明会・見学会を開催します</a></li>
-      <li><time>2026.00.00</time><span class="cat">事業所</span><a href="#">〇〇市に新しいグループホームを開設しました</a></li>
+    <div class="sec-title reveal"><small>NEWS</small><h2>お知らせ</h2></div>
+    <ul class="news reveal">
+      <li><a href="#"><time datetime="2026">2026.00.00</time><span class="cat">お知らせ</span><span>株式会社Starsと株式会社リタラスが統合し「リタ株式会社」となりました</span></a></li>
+      <li><a href="#"><time datetime="2026">2026.00.00</time><span class="cat">採用</span><span>合同説明会・見学会を開催します</span></a></li>
+      <li><a href="#"><time datetime="2026">2026.00.00</time><span class="cat">事業所</span><span>〇〇市に新しいグループホームを開設しました</span></a></li>
     </ul>
+    <div class="btns center"><a href="#" class="btn btn-outline btn-sm">お知らせ一覧</a></div>
   </div>
 </section>
 
+<!-- お問い合わせ -->
+<section id="contact" class="soft">
+  <div class="wrap">
+    <div class="sec-title reveal"><small>CONTACT</small><h2>見学・入居のご相談</h2><p>ご本人・ご家族はもちろん、相談支援専門員・医療機関の方からのご相談も歓迎です。</p></div>
+    <div class="contact">
+      <div class="reveal">
+        <div class="tel-box">
+          <p>お電話でのご相談</p>
+          <a class="tel" href="tel:0000000000"><svg class="ico"><use href="#i-phone"/></svg>00-0000-0000</a>
+          <small>受付 9:00〜18:00（土日祝を除く ※要確認）</small>
+        </div>
+        <div class="tel-box">
+          <p style="font-weight:700;display:flex;gap:8px;align-items:center"><svg class="ico" style="color:var(--main)"><use href="#i-mail"/></svg>フォームでのご相談</p>
+          <p style="color:var(--muted);margin-top:6px">24時間受け付けています。2営業日以内に担当者よりご連絡いたします。</p>
+        </div>
+      </div>
+      <form class="reveal" id="contact-form" novalidate>
+        <fieldset class="field">
+          <legend>ご相談の種類<span class="req">必須</span></legend>
+          <div class="radios">
+            <label><input type="radio" name="kind" value="見学" required checked>見学</label>
+            <label><input type="radio" name="kind" value="入居相談">入居相談</label>
+            <label><input type="radio" name="kind" value="採用">採用</label>
+            <label><input type="radio" name="kind" value="物件">物件のご紹介</label>
+            <label><input type="radio" name="kind" value="その他">その他</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-tel">電話番号<span class="req">必須</span></label><input id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="field"><label for="f-mail">メールアドレス</label><input id="f-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="f-rel">ご本人との関係</label>
+          <select id="f-rel" name="relation"><option>ご本人</option><option>ご家族</option><option>相談支援専門員</option><option>医療機関・行政</option><option>その他</option></select>
+        </div>
+        <div class="field"><label for="f-msg">ご相談内容</label><textarea id="f-msg" name="message" rows="4" placeholder="ご希望のエリア、支援区分、医療的ケアの有無など、わかる範囲でご記入ください"></textarea></div>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-main" style="width:100%">送信内容を確認する<svg class="ico"><use href="#i-arrow"/></svg></button>
+        <p class="note" style="text-align:center">送信により<a href="#" style="text-decoration:underline">プライバシーポリシー</a>に同意したものとみなします。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <!-- フッター -->
-<footer id="contact">
+<footer>
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="logo">リタ株式会社</div>
-        <p style="margin-top:12px">〒530-0001 大阪府大阪市北区梅田3-4-5 毎日新聞ビル2F（※統合後の住所に要確認）<br>TEL：00-0000-0000（受付 9:00〜18:00）</p>
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#1f7a6d"/><path d="M32 13 12 30h6v20h28V30h6L32 13Z" fill="#fff"/><circle cx="32" cy="38" r="6" fill="#f28c38"/></svg>
+          <span>リタ株式会社<small>Rita Co., Ltd.</small></span>
+        </div>
+        <p style="margin-top:16px">〒530-0001 大阪府大阪市北区梅田3-4-5 毎日新聞ビル2F（※統合後の住所に要確認）<br>TEL：00-0000-0000（受付 9:00〜18:00）</p>
       </div>
-      <div class="foot-links">
-        <div><p>ご利用の方</p><a href="#">サービス</a><a href="#">事業所一覧</a><a href="#">ご利用の流れ</a><a href="#">よくあるご質問</a><a href="#">見学・入居相談</a></div>
-        <div><p>採用・オーナー様</p><a href="#">採用情報</a><a href="#">エントリー</a><a href="#">物件オーナー様へ</a><a href="#">物件のご紹介</a></div>
-        <div><p>会社情報</p><a href="#">代表メッセージ</a><a href="#">理念・ビジョン</a><a href="#">会社概要</a><a href="#">お知らせ</a><a href="#">プライバシーポリシー</a></div>
-      </div>
+      <nav class="foot-links" aria-label="フッターナビゲーション">
+        <div><p>ご利用の方</p><a href="#service">サービス</a><a href="#cost">費用の目安</a><a href="#area">事業所一覧</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくあるご質問</a><a href="#contact">見学・入居相談</a></div>
+        <div><p>採用・オーナー様</p><a href="#recruit">採用情報</a><a href="#">エントリー</a><a href="#owner">物件オーナー様へ</a><a href="#contact">物件のご紹介</a></div>
+        <div><p>会社情報</p><a href="#about">代表メッセージ</a><a href="#">理念・ビジョン</a><a href="#">会社概要</a><a href="#">お知らせ</a><a href="#">プライバシーポリシー</a></div>
+      </nav>
     </div>
     <p class="copy">© Rita Co., Ltd. All Rights Reserved.</p>
   </div>
 </footer>
 
+<a href="#" class="to-top" aria-label="ページの先頭へ戻る"><svg class="ico"><use href="#i-up"/></svg></a>
+
 <!-- スマホ固定ボタン -->
 <div class="fixed-cta">
-  <a href="tel:0000000000">📞<br>電話する</a>
-  <a href="#contact">見学・<br>入居相談</a>
-  <a href="#recruit">採用に<br>応募する</a>
+  <a href="tel:0000000000"><svg class="ico"><use href="#i-phone"/></svg>電話する</a>
+  <a href="#contact"><svg class="ico"><use href="#i-home"/></svg>見学・入居相談</a>
+  <a href="#recruit"><svg class="ico"><use href="#i-users"/></svg>採用に応募</a>
 </div>
 
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // 文字サイズ切り替え（保存できない環境でも動作する）
+  var sizeBtns = document.querySelectorAll('.tools [data-size]');
+  function setSize(s){
+    if (s === 'large') root.setAttribute('data-size','large'); else root.removeAttribute('data-size');
+    sizeBtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.size === s)); });
+  }
+  try { var saved = localStorage.getItem('rita-size'); if (saved) setSize(saved); } catch(e){}
+  sizeBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      setSize(b.dataset.size);
+      try { localStorage.setItem('rita-size', b.dataset.size); } catch(e){}
+    });
+  });
+
+  // スマホメニュー
+  var menuBtn = document.querySelector('.menu-btn');
+  var drawer = document.getElementById('drawer');
+  function toggleMenu(open){
+    drawer.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    menuBtn.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuBtn.addEventListener('click', function(){ toggleMenu(!drawer.classList.contains('open')); });
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ toggleMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && drawer.classList.contains('open')) { toggleMenu(false); menuBtn.focus(); } });
+
+  // 写真の自動差し替え：site/images/ に画像があれば表示
+  document.querySelectorAll('[data-img]').forEach(function(el){
+    var img = new Image();
+    img.onload = function(){ el.style.backgroundImage = 'url("' + el.dataset.img + '")'; el.classList.add('has-img'); };
+    img.src = el.dataset.img;
+  });
+
+  // スクロールでふわっと表示
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // トップへ戻る
+  var toTop = document.querySelector('.to-top');
+  window.addEventListener('scroll', function(){ toTop.classList.toggle('show', window.scrollY > 600); }, { passive: true });
+
+  // フォーム（送信先は未接続の試作）
+  var form = document.getElementById('contact-form');
+  var msg = form.querySelector('.form-msg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var bad = Array.prototype.find.call(form.querySelectorAll('[required]'), function(f){ return !f.checkValidity(); });
+    if (bad) {
+      msg.textContent = '必須項目をご入力ください。';
+      msg.classList.add('show');
+      bad.focus();
+      return;
+    }
+    msg.textContent = '試作ページのため送信はされません（送信先の設定後に有効になります）。';
+    msg.classList.add('show');
+  });
+})();
+</script>
 </body>
 </html>
