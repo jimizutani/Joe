@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リタ株式会社｜重度障害に特化したグループホーム・重度訪問介護</title>
+<meta name="description" content="リタ株式会社は、障害支援区分4〜6の重度障害のある方の暮らしを、住まいと介護の両面から24時間365日支える障害福祉の専門会社です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --main:#1f7a6d;      /* 信頼のティール */
+  --main-dark:#145a50;
+  --accent:#f28c38;    /* あたたかいオレンジ */
+  --accent-dark:#d9721f;
+  --owner:#4a6fa5;     /* 家主向けブルー */
+  --bg:#ffffff;
+  --bg-soft:#f6f4ef;
+  --text:#2b2b2b;
+  --muted:#666;
+  --line:#e4e0d8;
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16191a; --bg-soft:#1f2324; --text:#ececec; --muted:#a8a8a8; --line:#33393a;
+    --main:#3fae9c; --main-dark:#2c8a7a;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--text);background:var(--bg);line-height:1.8;font-size:16px}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+section{padding:80px 0}
+.sec-title{text-align:center;margin-bottom:48px}
+.sec-title small{display:block;color:var(--main);font-weight:700;letter-spacing:.15em;font-size:13px}
+.sec-title h2{font-size:clamp(24px,4vw,34px);font-weight:900;line-height:1.4}
+.soft{background:var(--bg-soft)}
+.note{font-size:12px;color:var(--muted)}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:900;font-size:22px;color:var(--main);display:flex;align-items:center;gap:8px}
+.logo span{font-size:11px;color:var(--muted);font-weight:500;display:block;line-height:1.2}
+nav ul{display:flex;gap:24px;list-style:none;font-size:14px;font-weight:500}
+nav a:hover{color:var(--main)}
+.head-cta{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;border:2px solid transparent}
+.btn-main{background:var(--main);color:#fff}
+.btn-main:hover{background:var(--main-dark)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-dark)}
+.btn-owner{background:var(--owner);color:#fff}
+.btn-outline{border-color:var(--main);color:var(--main);background:transparent}
+.btn-sm{padding:8px 16px;font-size:13px}
+@media (max-width:960px){nav,.head-cta{display:none}}
+
+/* メインビジュアル */
+.hero{padding:0;background:linear-gradient(135deg,#e6f3ef 0%,#fdf1e4 100%);position:relative;overflow:hidden}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero{background:linear-gradient(135deg,#17302c 0%,#2e2418 100%)}}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:80px 16px}
+.hero h1{font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.4;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--main)}
+.hero p.lead{font-size:clamp(15px,2vw,18px);margin-bottom:32px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.hero-tags span{background:var(--bg);border:1px solid var(--line);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--main)}
+.hero-art{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0,#cfe8e2 60%,#a9d6cc 100%);display:flex;align-items:center;justify-content:center;position:relative}
+.hero-art::after{content:"写真：入居者様とスタッフの笑顔（差し替え）";position:absolute;bottom:18%;font-size:12px;color:#557;background:#fff9;padding:4px 10px;border-radius:8px}
+@media (max-width:860px){.hero-inner{grid-template-columns:1fr;padding:48px 16px}.hero-art{max-width:280px;margin:0 auto}}
+
+/* 3つの入口 */
+.gates{margin-top:-40px;position:relative;z-index:2}
+.gate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gate{background:var(--bg);border-radius:var(--radius);padding:28px 24px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:6px solid var(--main);display:flex;flex-direction:column;gap:8px;transition:.2s}
+.gate:hover{transform:translateY(-4px)}
+.gate.recruit{border-color:var(--accent)}
+.gate.owner{border-color:var(--owner)}
+.gate .for{font-size:12px;font-weight:700;color:var(--muted)}
+.gate h3{font-size:20px;font-weight:900}
+.gate p{font-size:14px;color:var(--muted);flex:1}
+.gate .go{font-weight:700;color:var(--main)}
+.gate.recruit .go{color:var(--accent-dark)}
+.gate.owner .go{color:var(--owner)}
+@media (max-width:860px){.gate-grid{grid-template-columns:1fr}.gates{margin-top:24px}}
+
+/* 強み */
+.strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.str{text-align:center;padding:32px 20px;border-radius:var(--radius);background:var(--bg-soft)}
+.str .num{font-size:40px;font-weight:900;color:var(--main);line-height:1.2}
+.str h3{font-size:19px;margin:10px 0}
+.str p{font-size:14px;color:var(--muted);text-align:left}
+@media (max-width:860px){.strengths{grid-template-columns:1fr}}
+
+/* サービス */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.svc{background:var(--bg);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.svc .ph{height:180px;background:linear-gradient(135deg,#cfe8e2,#f5dcc0);display:flex;align-items:center;justify-content:center;font-size:12px;color:#556}
+.svc .body{padding:24px}
+.svc .label{display:inline-block;font-size:12px;font-weight:700;background:var(--main);color:#fff;padding:2px 10px;border-radius:6px;margin-bottom:8px}
+.svc h3{font-size:22px;margin-bottom:8px}
+.svc ul{margin:12px 0 20px 1.2em;font-size:14px}
+@media (max-width:860px){.svc-grid{grid-template-columns:1fr}}
+.care-list{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.care-list span{border:1px solid var(--main);color:var(--main);padding:6px 16px;border-radius:999px;font-size:14px;font-weight:500}
+
+/* 数字 */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.nums div{padding:24px 8px;border-radius:var(--radius);background:var(--bg)}
+.nums b{display:block;font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--main);line-height:1.2}
+.nums b small{font-size:16px}
+.nums span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.nums{grid-template-columns:repeat(2,1fr)}}
+
+/* 事業所 */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.map{aspect-ratio:4/3;border-radius:var(--radius);background:var(--bg-soft);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.vacancy{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.vacancy li{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid var(--line);border-radius:12px}
+.vac-ok{background:#e3f4ec;color:#1b7a4e;font-size:12px;font-weight:700;padding:2px 10px;border-radius:6px}
+.vac-few{background:#fdf0dc;color:#b06a12;font-size:12px;font-weight:700;padding:2px 10px;border-radius:6px}
+@media (max-width:860px){.area{grid-template-columns:1fr}}
+
+/* 流れ */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:step}
+.flow li{list-style:none;text-align:center;background:var(--bg);border-radius:var(--radius);padding:24px 10px;position:relative}
+.flow li::before{counter-increment:step;content:"STEP " counter(step);display:block;font-size:12px;font-weight:700;color:var(--accent-dark)}
+.flow li b{display:block;font-size:17px;margin:4px 0}
+.flow li p{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.flow{grid-template-columns:1fr}}
+.center{text-align:center;margin-top:32px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* 採用バナー */
+.recruit-bn{background:linear-gradient(120deg,var(--accent) 0%,#f6b26b 100%);color:#fff;border-radius:24px;padding:56px 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.recruit-bn small{font-weight:700;letter-spacing:.15em}
+.recruit-bn h2{font-size:clamp(24px,4vw,36px);font-weight:900;line-height:1.4;margin:8px 0 16px}
+.recruit-bn ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.recruit-bn ul li{background:#ffffff33;padding:4px 12px;border-radius:999px;font-size:13px}
+.recruit-bn .btn{background:#fff;color:var(--accent-dark)}
+.jobs{background:#ffffff26;border-radius:var(--radius);padding:20px}
+.jobs p{font-weight:700;margin-bottom:8px}
+.jobs li{list-style:none;border-bottom:1px solid #ffffff55;padding:6px 0;font-size:14px}
+@media (max-width:860px){.recruit-bn{grid-template-columns:1fr;padding:40px 24px}}
+
+/* 家主バナー */
+.owner-bn{border:2px solid var(--owner);border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.owner-bn small{color:var(--owner);font-weight:700;letter-spacing:.15em}
+.owner-bn h2{font-size:clamp(22px,3.5vw,32px);font-weight:900;line-height:1.4;margin:8px 0 16px}
+.merits{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.merits div{background:var(--bg-soft);border-radius:12px;padding:16px}
+.merits b{display:block;color:var(--owner)}
+.merits span{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.owner-bn{grid-template-columns:1fr;padding:32px 20px}}
+
+/* お知らせ */
+.news{list-style:none;max-width:800px;margin:0 auto}
+.news li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.news time{color:var(--muted);font-size:14px}
+.news .cat{font-size:12px;background:var(--main);color:#fff;padding:2px 10px;border-radius:6px;height:fit-content}
+
+/* フッター */
+footer{background:#1d2b29;color:#d8e2df;padding:56px 0 100px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.2fr 2fr;gap:40px}
+.foot .logo{color:#fff}
+.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.foot-links p{font-weight:700;color:#fff;margin-bottom:6px}
+.foot-links a{display:block;opacity:.8;padding:2px 0}
+.copy{text-align:center;margin-top:40px;opacity:.6;font-size:12px}
+@media (max-width:760px){.foot,.foot-links{grid-template-columns:1fr}}
+
+/* スマホ固定CTA */
+.fixed-cta{display:none}
+@media (max-width:960px){
+  .fixed-cta{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;bottom:0;left:0;right:0;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.12)}
+  .fixed-cta a{padding:12px 4px;text-align:center;color:#fff;font-weight:700;font-size:13px;line-height:1.3}
+  .fixed-cta a:nth-child(1){background:var(--main-dark)}
+  .fixed-cta a:nth-child(2){background:var(--main)}
+  .fixed-cta a:nth-child(3){background:var(--accent)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a href="#" class="logo">リタ<span>リタ株式会社<br>重度障害者の暮らしの専門会社</span></a>
+    <nav><ul>
+      <li><a href="#about">リタについて</a></li>
+      <li><a href="#service">サービス</a></li>
+      <li><a href="#area">事業所一覧</a></li>
+      <li><a href="#flow">ご利用の流れ</a></li>
+      <li><a href="#recruit">採用情報</a></li>
+      <li><a href="#owner">物件オーナー様へ</a></li>
+    </ul></nav>
+    <div class="head-cta">
+      <a href="#contact" class="btn btn-main btn-sm">見学・入居相談</a>
+      <a href="#recruit" class="btn btn-accent btn-sm">応募する</a>
+    </div>
+  </div>
+</header>
+
+<!-- メインビジュアル -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-tags"><span>障害支援区分4〜6</span><span>24時間365日</span><span>医療的ケア対応</span></div>
+      <h1>重い障害があっても、<br><em>自分らしく</em>、<br>地域で暮らす。</h1>
+      <p class="lead">リタ株式会社は、重度障害のある方の「住まい」と「介護」を一体でお届けする障害福祉の専門会社です。<br>グループホームと重度訪問介護で、24時間の暮らしを支えます。</p>
+      <div class="center" style="justify-content:flex-start;margin-top:0">
+        <a href="#contact" class="btn btn-main">見学・入居のご相談</a>
+        <a href="tel:0000000000" class="btn btn-outline">お電話でのご相談</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg width="55%" viewBox="0 0 120 120" fill="none"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- 3つの入口 -->
+<div class="wrap gates">
+  <div class="gate-grid">
+    <a href="#service" class="gate">
+      <span class="for">ご本人・ご家族・相談支援専門員の方</span>
+      <h3>ご利用・ご入居を<br>お考えの方</h3>
+      <p>空室状況・費用の目安・医療的ケアの対応範囲をご確認いただけます。</p>
+      <span class="go">詳しく見る →</span>
+    </a>
+    <a href="#recruit" class="gate recruit">
+      <span class="for">介護職・看護師・管理者を目指す方</span>
+      <h3>採用情報</h3>
+      <p>未経験から重度ケアのプロへ。資格取得支援・明確なキャリアパスがあります。</p>
+      <span class="go">募集職種を見る →</span>
+    </a>
+    <a href="#owner" class="gate owner">
+      <span class="for">空き家・アパートをお持ちの方</span>
+      <h3>物件オーナー様へ</h3>
+      <p>グループホームとして一括借上げ。長期・安定した賃料収入を実現します。</p>
+      <span class="go">物件を紹介する →</span>
+    </a>
+  </div>
+</div>
+
+<!-- 強み -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-title"><small>OUR STRENGTH</small><h2>リタが「重度障害」に<br>特化する理由</h2></div>
+    <div class="strengths">
+      <div class="str"><div class="num">01</div><h3>支援区分4〜6に特化</h3><p>受け入れ先が見つかりにくい重度障害の方こそ、地域で暮らせる場所が必要です。私たちは重度の方の支援を専門としています。</p></div>
+      <div class="str"><div class="num">02</div><h3>24時間365日の支援</h3><p>夜間も職員が常駐。グループホームと重度訪問介護を組み合わせ、一人ひとりの支給決定に合わせたマンツーマンケアを行います。</p></div>
+      <div class="str"><div class="num">03</div><h3>医療的ケアに対応</h3><p>喀痰吸引等研修を修了したスタッフが在籍。痰の吸引や経管栄養（胃ろう等）にも、体制の範囲内で対応します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- サービス -->
+<section id="service" class="soft">
+  <div class="wrap">
+    <div class="sec-title"><small>SERVICE</small><h2>2つの住まいのかたち</h2></div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ph">写真：グループホーム外観・居室（差し替え）</div>
+        <div class="body">
+          <span class="label">共同生活援助</span>
+          <h3>重度障害者向けグループホーム</h3>
+          <p>少人数で暮らす家庭的な住まい。生活支援員・世話人が24時間体制で日常生活をサポートします。</p>
+          <ul><li>障害支援区分4〜6の方が対象</li><li>日中サービス支援型にも対応（※要確認）</li><li>食事・入浴・排せつ・服薬などの支援</li></ul>
+          <a href="#" class="btn btn-outline btn-sm">グループホームについて</a>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph">写真：リタラスホームの居室・ケアの様子（差し替え）</div>
+        <div class="body">
+          <span class="label">住まい＋重度訪問介護</span>
+          <h3>リタラスホーム</h3>
+          <p>安心して暮らせる「住まい」と、居宅介護・重度訪問介護を組み合わせた新しいかたちの住まいです。</p>
+          <ul><li>介護有資格者を中心としたスタッフが常駐</li><li>支給決定に応じたマンツーマンケア</li><li>医療的ケアが必要な方もご相談ください</li></ul>
+          <a href="#" class="btn btn-outline btn-sm">リタラスホームについて</a>
+        </div>
+      </div>
+    </div>
+    <div class="care-list" aria-label="対応可能なケア">
+      <span>喀痰吸引</span><span>経管栄養（胃ろう等）</span><span>服薬管理</span><span>見守り・夜間支援</span><span>コミュニケーション支援</span><span>通院同行</span>
+    </div>
+    <div class="center"><a href="#" class="btn btn-main">どちらが合う？サービスの選び方</a></div>
+  </div>
+</section>
+
+<!-- 数字で見るリタ -->
+<section>
+  <div class="wrap">
+    <div class="sec-title"><small>NUMBERS</small><h2>数字で見るリタ</h2></div>
+    <div class="nums soft" style="padding:16px;border-radius:24px">
+      <div><b>00<small>拠点</small></b><span>事業所数</span></div>
+      <div><b>000<small>名</small></b><span>ご入居者・ご利用者</span></div>
+      <div><b>000<small>名</small></b><span>スタッフ数</span></div>
+      <div><b>24<small>時間</small></b><span>365日の支援体制</span></div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:12px">※数値は統合後の実数に差し替えてください</p>
+  </div>
+</section>
+
+<!-- 事業所・空室 -->
+<section id="area" class="soft">
+  <div class="wrap">
+    <div class="sec-title"><small>LOCATION</small><h2>事業所一覧・空室情報</h2></div>
+    <div class="area">
+      <div class="map">地図（Googleマップ埋め込み／エリア検索）</div>
+      <div>
+        <ul class="vacancy">
+          <li><span>大阪市北区エリア　〇〇ホーム</span><span class="vac-ok">空室あり</span></li>
+          <li><span>〇〇市エリア　〇〇ホーム</span><span class="vac-few">残りわずか</span></li>
+          <li><span>〇〇市エリア　リタラスホーム〇〇</span><span class="vac-ok">空室あり</span></li>
+        </ul>
+        <p class="note">※サンプル表示です。空室状況は随時更新します。</p>
+        <div class="center" style="justify-content:flex-start">
+          <a href="#" class="btn btn-main">すべての事業所を見る</a>
+          <a href="#" class="btn btn-outline">相談支援専門員・医療機関の方へ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご利用の流れ -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-title"><small>FLOW</small><h2>ご利用までの流れ</h2></div>
+    <ol class="flow soft" style="padding:16px;border-radius:24px">
+      <li><b>ご相談</b><p>お電話・フォームからお気軽に</p></li>
+      <li><b>見学</b><p>住まいとスタッフをご覧ください</p></li>
+      <li><b>体験入居</b><p>実際の暮らしをお試し</p></li>
+      <li><b>ご契約</b><p>支給決定・契約手続き</p></li>
+      <li><b>ご入居</b><p>新しい暮らしのスタート</p></li>
+    </ol>
+    <div class="center">
+      <a href="#contact" class="btn btn-main">見学・入居のご相談</a>
+      <a href="#" class="btn btn-outline">よくあるご質問</a>
+    </div>
+  </div>
+</section>
+
+<!-- 採用 -->
+<section id="recruit">
+  <div class="wrap">
+    <div class="recruit-bn">
+      <div>
+        <small>RECRUIT</small>
+        <h2>未経験から、<br>重度ケアのプロへ。</h2>
+        <p style="margin-bottom:16px">「ありがとう」が毎日聞こえる仕事です。リタでは喀痰吸引等研修などの資格取得を全面サポート。管理者・エリアマネージャーへのキャリアパスも明確です。</p>
+        <ul><li>資格取得支援</li><li>夜勤専従OK</li><li>未経験歓迎</li><li>管理職登用あり</li></ul>
+        <a href="#" class="btn">募集要項・応募はこちら</a>
+      </div>
+      <div class="jobs">
+        <p>募集職種</p>
+        <ul>
+          <li>生活支援員・世話人</li>
+          <li>重度訪問介護ヘルパー</li>
+          <li>看護師</li>
+          <li>サービス管理責任者</li>
+          <li>管理者・エリアマネージャー</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 家主募集 -->
+<section id="owner" style="padding-top:0">
+  <div class="wrap">
+    <div class="owner-bn">
+      <div>
+        <small>FOR OWNERS</small>
+        <h2>空き家・空室を、<br>グループホームとして<br>活用しませんか。</h2>
+        <p style="margin-bottom:20px">リタが一括で借り上げ、障害のある方の住まいとして運営します。社会貢献と安定収入を両立できる不動産活用です。</p>
+        <div class="center" style="justify-content:flex-start">
+          <a href="#" class="btn btn-owner">物件を紹介する（写真1枚からOK）</a>
+          <a href="#" class="btn btn-outline" style="border-color:var(--owner);color:var(--owner)">不動産会社様はこちら</a>
+        </div>
+      </div>
+      <div class="merits">
+        <div><b>一括借上げ</b><span>空室リスクを気にせず安定収入</span></div>
+        <div><b>長期契約</b><span>長期間の賃貸借契約が基本</span></div>
+        <div><b>社会貢献</b><span>地域の福祉インフラに</span></div>
+        <div><b>改修のご相談</b><span>必要な改修もご提案します</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-title"><small>NEWS</small><h2>お知らせ</h2></div>
+    <ul class="news">
+      <li><time>2026.00.00</time><span class="cat">お知らせ</span><a href="#">株式会社Starsと株式会社リタラスが統合し「リタ株式会社」となりました</a></li>
+      <li><time>2026.00.00</time><span class="cat">採用</span><a href="#">合同説明会・見学会を開催します</a></li>
+      <li><time>2026.00.00</time><span class="cat">事業所</span><a href="#">〇〇市に新しいグループホームを開設しました</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">リタ株式会社</div>
+        <p style="margin-top:12px">〒530-0001 大阪府大阪市北区梅田3-4-5 毎日新聞ビル2F（※統合後の住所に要確認）<br>TEL：00-0000-0000（受付 9:00〜18:00）</p>
+      </div>
+      <div class="foot-links">
+        <div><p>ご利用の方</p><a href="#">サービス</a><a href="#">事業所一覧</a><a href="#">ご利用の流れ</a><a href="#">よくあるご質問</a><a href="#">見学・入居相談</a></div>
+        <div><p>採用・オーナー様</p><a href="#">採用情報</a><a href="#">エントリー</a><a href="#">物件オーナー様へ</a><a href="#">物件のご紹介</a></div>
+        <div><p>会社情報</p><a href="#">代表メッセージ</a><a href="#">理念・ビジョン</a><a href="#">会社概要</a><a href="#">お知らせ</a><a href="#">プライバシーポリシー</a></div>
+      </div>
+    </div>
+    <p class="copy">© Rita Co., Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- スマホ固定ボタン -->
+<div class="fixed-cta">
+  <a href="tel:0000000000">📞<br>電話する</a>
+  <a href="#contact">見学・<br>入居相談</a>
+  <a href="#recruit">採用に<br>応募する</a>
+</div>
+
+</body>
+</html>
