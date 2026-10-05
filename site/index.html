@@ -173,7 +173,7 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
   .hero-badge{left:0}
 }
 
-/* 写真枠（site/images/ に画像を置くと自動で差し替わる） */
+/* 写真枠（site/images/ の画像 → なければ Higgsfield の生成画像URL を表示） */
 .ph{position:relative;background:linear-gradient(135deg,var(--ph-a),var(--ph-b));background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:center}
 .ph:not(.has-img)::after{content:attr(data-label);margin:14px 12px;font-size:.72rem;color:var(--text);background:color-mix(in srgb,var(--card) 80%,transparent);padding:4px 10px;border-radius:8px;text-align:center}
 .ph:not(.has-img) .ph-icon{position:absolute;inset:0;margin:auto;width:42%;height:42%;opacity:.9}
@@ -490,7 +490,7 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
       </div>
     </div>
     <div class="reveal" style="position:relative">
-      <div class="hero-photo ph" data-img="images/hero.jpg" data-label="写真：入居者様とスタッフの笑顔（images/hero.jpg）" role="img" aria-label="入居者様とスタッフが笑い合う様子">
+      <div class="hero-photo ph" data-img="images/hero.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222803_36192e4d-9679-4ee3-b858-0a3f83e0e9a4.png" data-label="写真：入居者様とスタッフの笑顔（images/hero.png）" role="img" aria-label="入居者様とスタッフが笑い合う様子">
         <svg class="ph-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
       </div>
       <div class="hero-badge"><b>24h</b><span>夜間もスタッフが常駐<br>365日の安心を</span></div>
@@ -528,7 +528,7 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
 <!-- 代表メッセージ -->
 <section id="about">
   <div class="wrap message">
-    <div class="ph reveal" data-img="images/ceo.jpg" data-label="写真：代表（images/ceo.jpg）" role="img" aria-label="代表取締役の写真">
+    <div class="ph reveal" data-img="images/ceo.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222802_d87e7524-8753-44fe-9342-f28cecd6b972.png" data-label="写真：代表（images/ceo.png）" role="img" aria-label="代表取締役の写真">
       <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
     </div>
     <div class="reveal">
@@ -559,7 +559,7 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
     <div class="sec-title reveal"><small>SERVICE</small><h2>2つの住まいのかたち</h2><p>ご本人の状態やご希望に合わせて、最適な暮らし方をご提案します。</p></div>
     <div class="svc-grid">
       <article class="svc reveal">
-        <div class="ph" data-img="images/service-gh.jpg" data-label="写真：グループホーム外観（images/service-gh.jpg）" role="img" aria-label="グループホームの外観">
+        <div class="ph" data-img="images/service-gh.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222802_1e7dac3b-be65-4801-816c-a5e89f1ea522.png" data-label="写真：グループホーム外観（images/service-gh.png）" role="img" aria-label="グループホームの外観">
           <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg>
         </div>
         <div class="body">
@@ -575,7 +575,7 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
         </div>
       </article>
       <article class="svc reveal">
-        <div class="ph" data-img="images/service-ritarasu.jpg" data-label="写真：リタラスホームの居室（images/service-ritarasu.jpg）" role="img" aria-label="リタラスホームの居室とケアの様子">
+        <div class="ph" data-img="images/service-ritarasu.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222802_822e2ca0-b05e-4524-bc9a-b6fd7c9c47fa.png" data-label="写真：リタラスホームの居室（images/service-ritarasu.png）" role="img" aria-label="リタラスホームの居室とケアの様子">
           <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#1f7a6d" stroke-width="1.2" aria-hidden="true"><path d="M2 20V6M2 16h20v4M22 16v-4a3 3 0 0 0-3-3h-8v7"/><circle cx="6.5" cy="11.5" r="2"/></svg>
         </div>
         <div class="body">
@@ -908,10 +908,16 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && drawer.classList.contains('open')) { toggleMenu(false); menuBtn.focus(); } });
 
   // 写真の自動差し替え：site/images/ に画像があれば表示
+  // 置いていない場合は data-img-fallback（Higgsfieldの生成画像URL）を使う
   document.querySelectorAll('[data-img]').forEach(function(el){
-    var img = new Image();
-    img.onload = function(){ el.style.backgroundImage = 'url("' + el.dataset.img + '")'; el.classList.add('has-img'); };
-    img.src = el.dataset.img;
+    var srcs = [el.dataset.img, el.dataset.imgFallback].filter(Boolean);
+    (function tryLoad(i){
+      if (i >= srcs.length) return;
+      var img = new Image();
+      img.onload = function(){ el.style.backgroundImage = 'url("' + srcs[i] + '")'; el.classList.add('has-img'); };
+      img.onerror = function(){ tryLoad(i + 1); };
+      img.src = srcs[i];
+    })(0);
   });
 
   // スクロールでふわっと表示
