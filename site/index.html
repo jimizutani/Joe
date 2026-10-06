@@ -6,14 +6,14 @@
 <title>リタ株式会社｜重度障害に特化したグループホーム・重度訪問介護</title>
 <meta name="description" content="リタ株式会社は、障害支援区分4〜6の重度障害のある方の暮らしを、住まいと介護の両面から24時間365日支える障害福祉の専門会社です。グループホーム・リタラスホームの見学・入居相談、採用、物件オーナー様のご相談を受け付けています。">
 <meta name="theme-color" content="#1f7a6d">
-<link rel="canonical" href="https://example.com/">
+<link rel="canonical" href="https://rita-site.pages.dev/">
 <!-- OGP（公開時にURL・画像を差し替え） -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="リタ株式会社">
 <meta property="og:title" content="リタ株式会社｜重い障害があっても、自分らしく、地域で暮らす。">
 <meta property="og:description" content="重度障害のある方の「住まい」と「介護」を一体でお届けする障害福祉の専門会社です。">
-<meta property="og:url" content="https://example.com/">
-<meta property="og:image" content="https://example.com/images/ogp.jpg">
+<meta property="og:url" content="https://rita-site.pages.dev/">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261006_094216_f743386a-53d3-4e72-a149-c081357cdf63.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f7a6d'/%3E%3Cpath d='M32 13 12 30h6v20h28V30h6L32 13Z' fill='%23fff'/%3E%3Ccircle cx='32' cy='38' r='6' fill='%23f28c38'/%3E%3C/svg%3E">
@@ -26,8 +26,7 @@
   "@type": "Organization",
   "name": "リタ株式会社",
   "alternateName": "Rita Co., Ltd.",
-  "url": "https://example.com/",
-  "logo": "https://example.com/images/logo.png",
+  "url": "https://rita-site.pages.dev/",
   "description": "重度障害のある方の住まいと介護を24時間365日支える障害福祉の専門会社",
   "telephone": "+81-0-0000-0000",
   "address": {
@@ -165,6 +164,8 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .hero-tags span{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);padding:4px 14px;border-radius:999px;font-size:.8rem;font-weight:700;color:var(--main)}
 .hero-photo{align-items:flex-start;position:relative;aspect-ratio:4/5;max-height:560px;border-radius:200px 200px 32px 32px;overflow:hidden;box-shadow:var(--shadow)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+.hero-video.on{opacity:1}
 .hero-badge{position:absolute;left:-12px;bottom:28px;background:var(--card);border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;font-size:.8rem;line-height:1.5}
 .hero-badge b{font-family:"Zen Maru Gothic",sans-serif;font-size:1.6rem;color:var(--main);line-height:1}
 @media (max-width:860px){
@@ -239,18 +240,34 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 .nums span{font-size:.85rem;color:var(--muted)}
 @media (max-width:760px){.nums{grid-template-columns:repeat(2,1fr)}}
 
-/* 費用 */
-.cost{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
-.cost table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;font-size:.92rem}
-.cost th,.cost td{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left}
-.cost th{background:var(--main-soft);color:var(--main);font-weight:700;width:42%}
-.cost tr:last-child td,.cost tr:last-child th{border-bottom:0}
-.cost td.total{font-weight:700;font-size:1.05rem}
+/* 費用（プラン比較カード） */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px 26px;display:flex;flex-direction:column;min-width:0}
+.plan.featured{border:2px solid var(--main);box-shadow:var(--shadow)}
+.plan .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--main);color:var(--on-main);font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:999px}
+.plan .ptype{font-size:.75rem;font-weight:700;color:var(--muted)}
+.plan h3{font-size:1.35rem;line-height:1.4;margin:4px 0 6px}
+.plan .for{font-size:.82rem;color:var(--muted);min-height:3em}
+.price{display:flex;align-items:baseline;gap:4px;margin:18px 0 4px;font-variant-numeric:tabular-nums}
+.price small{font-size:.8rem;color:var(--muted)}
+.price b{font-family:"Zen Maru Gothic",sans-serif;font-size:2.2rem;font-weight:900;color:var(--main);line-height:1}
+.plan .incl{font-size:.75rem;color:var(--muted);padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.plan .checks{margin:18px 0 24px}
+.plan .btn{width:100%}
+.cost-notes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
 .cost-box{background:var(--card);border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
 .cost-box h3{font-size:1.05rem;margin-bottom:8px;display:flex;gap:8px;align-items:center;color:var(--main)}
 .cost-box p{font-size:.88rem;color:var(--muted)}
-.cost-box+.cost-box{margin-top:16px}
-@media (max-width:860px){.cost{grid-template-columns:1fr}}
+.compare-wrap{margin-top:40px;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);background:var(--card)}
+.compare{width:100%;min-width:560px;border-collapse:collapse;font-size:.9rem}
+.compare caption{text-align:left;font-weight:700;padding:16px 20px 0;font-family:"Zen Maru Gothic",sans-serif;font-size:1.05rem}
+.compare th,.compare td{padding:14px 20px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.compare thead th{color:var(--main);font-size:.85rem}
+.compare tbody th{font-weight:700;white-space:nowrap;width:22%}
+.compare tr:last-child th,.compare tr:last-child td{border-bottom:0}
+.compare .yes{color:var(--main);font-weight:700}
+@media (max-width:960px){.plans{grid-template-columns:1fr;max-width:520px;margin:0 auto;gap:28px}.plan .for{min-height:0}}
+@media (max-width:760px){.cost-notes{grid-template-columns:1fr}}
 
 /* 事業所 */
 .area{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
@@ -317,6 +334,10 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 9
 .btn-owner-outline{border-color:var(--owner);color:var(--owner);background:transparent}
 @media (max-width:860px){.owner-bn{grid-template-columns:1fr}}
 @media (max-width:420px){.merits{grid-template-columns:1fr}}
+
+.recruit-ph{aspect-ratio:4/3;border-radius:16px;margin-bottom:20px;--ph-a:#ffffff33;--ph-b:#ffffff1a}
+.owner-side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.owner-ph{aspect-ratio:3/2;border-radius:16px}
 
 /* FAQ */
 .faq{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
@@ -491,6 +512,7 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
     </div>
     <div class="reveal" style="position:relative">
       <div class="hero-photo ph" data-img="images/hero.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222803_36192e4d-9679-4ee3-b858-0a3f83e0e9a4.png" data-label="写真：入居者様とスタッフの笑顔（images/hero.png）" role="img" aria-label="入居者様とスタッフが笑い合う様子">
+        <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261006_094239_95d88893-728d-4c90-b78e-d99376e97e52.mp4"></video>
         <svg class="ph-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
       </div>
       <div class="hero-badge"><b>24h</b><span>夜間もスタッフが常駐<br>365日の安心を</span></div>
@@ -618,28 +640,74 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
 <!-- 費用の目安 -->
 <section id="cost">
   <div class="wrap">
-    <div class="sec-title reveal"><small>COST</small><h2>費用の目安（グループホーム）</h2><p>月々のご負担は、障害年金の範囲内で暮らせることを目指しています。</p></div>
-    <div class="cost">
-      <div class="reveal">
-        <table>
-          <caption class="sr">グループホームの月額費用の目安</caption>
-          <tr><th scope="row">家賃</th><td>〇〇,〇〇〇円</td></tr>
-          <tr><th scope="row">食費</th><td>〇〇,〇〇〇円</td></tr>
-          <tr><th scope="row">水道光熱費</th><td>〇〇,〇〇〇円</td></tr>
-          <tr><th scope="row">日用品費など</th><td>〇,〇〇〇円</td></tr>
-          <tr><th scope="row">合計（月額）</th><td class="total">〇〇,〇〇〇円</td></tr>
-        </table>
-        <p class="note" style="margin-top:10px">※事業所により異なります。金額は実際の料金に差し替えてください。</p>
+    <div class="sec-title reveal"><small>COST</small><h2>費用の目安</h2><p>月々のご負担は、障害年金の範囲内で暮らせることを目指しています。</p></div>
+    <div class="plans">
+      <article class="plan reveal">
+        <span class="ptype">まずはお試し</span>
+        <h3>体験入居</h3>
+        <p class="for">入居前に、実際の暮らしやスタッフとの相性を確かめたい方に</p>
+        <div class="price"><small>1泊</small><b>〇,〇〇〇</b><small>円〜</small></div>
+        <p class="incl">食費・光熱費などを含む目安</p>
+        <ul class="checks">
+          <li><svg class="ico"><use href="#i-check"/></svg>夜間もスタッフが常駐</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>ご家族の見学・同席OK</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>相談支援専門員と連携</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="margin-top:auto">体験入居を相談する</a>
+      </article>
+      <article class="plan featured reveal">
+        <span class="badge">障害支援区分4〜6の方</span>
+        <span class="ptype">共同生活援助</span>
+        <h3>グループホーム</h3>
+        <p class="for">少人数の家庭的な住まいで、24時間の支援を受けながら暮らしたい方に</p>
+        <div class="price"><small>月額</small><b>〇〇,〇〇〇</b><small>円〜</small></div>
+        <p class="incl">家賃・食費・水道光熱費・日用品費の合計（家賃補助適用前）</p>
+        <ul class="checks">
+          <li><svg class="ico"><use href="#i-check"/></svg>24時間365日の支援体制</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>食事・入浴・排せつ・服薬の支援</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>家賃補助の対象になる場合あり</li>
+        </ul>
+        <a href="#contact" class="btn btn-main" style="margin-top:auto">見学・入居を相談する</a>
+      </article>
+      <article class="plan reveal">
+        <span class="ptype">住まい＋重度訪問介護</span>
+        <h3>リタラスホーム</h3>
+        <p class="for">支給決定に合わせたマンツーマンのケアや、医療的ケアが必要な方に</p>
+        <div class="price"><small>月額</small><b>〇〇,〇〇〇</b><small>円〜</small></div>
+        <p class="incl">家賃・食費・水道光熱費などの合計（介護サービス費は別途）</p>
+        <ul class="checks">
+          <li><svg class="ico"><use href="#i-check"/></svg>介護有資格者を中心に常駐</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>喀痰吸引・経管栄養に対応</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>支給時間に応じたマンツーマンケア</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="margin-top:auto">見学・入居を相談する</a>
+      </article>
+    </div>
+    <p class="note" style="text-align:center;margin-top:16px">※金額は事業所により異なります。「〇」の部分は実際の料金に差し替えてください。</p>
+
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <caption>サービスの違い</caption>
+        <thead><tr><th scope="col">項目</th><th scope="col">グループホーム</th><th scope="col">リタラスホーム</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">対象の方</th><td>障害支援区分4〜6の方</td><td>重度訪問介護の支給決定がある方など</td></tr>
+          <tr><th scope="row">住まい</th><td>少人数で暮らす共同住居</td><td>個室中心の住まい</td></tr>
+          <tr><th scope="row">支援のかたち</th><td>生活支援員・世話人が交代で支援</td><td>ヘルパーがマンツーマンで支援</td></tr>
+          <tr><th scope="row">夜間の体制</th><td class="yes">職員が常駐</td><td class="yes">スタッフが常駐</td></tr>
+          <tr><th scope="row">医療的ケア</th><td>体制の範囲内で対応</td><td class="yes">喀痰吸引・経管栄養に対応</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:8px">※対象や体制は事業所により異なります。内容は実態に合わせて確認・修正してください。</p>
+
+    <div class="cost-notes">
+      <div class="cost-box reveal">
+        <h3><svg class="ico"><use href="#i-yen"/></svg>家賃の補助があります</h3>
+        <p>グループホームにお住まいの方は、条件により家賃の一部について補助（特定障害者特別給付費）を受けられる場合があります。</p>
       </div>
-      <div class="reveal">
-        <div class="cost-box">
-          <h3><svg class="ico"><use href="#i-yen"/></svg>家賃の補助があります</h3>
-          <p>グループホームにお住まいの方は、条件により家賃の一部について補助（特定障害者特別給付費）を受けられる場合があります。</p>
-        </div>
-        <div class="cost-box">
-          <h3><svg class="ico"><use href="#i-shield"/></svg>サービス利用料について</h3>
-          <p>障害福祉サービスの利用者負担は、世帯の所得に応じて上限額が決まっています。多くの方が自己負担0円でご利用されています。詳しくはお気軽にご相談ください。</p>
-        </div>
+      <div class="cost-box reveal">
+        <h3><svg class="ico"><use href="#i-shield"/></svg>サービス利用料について</h3>
+        <p>障害福祉サービスの利用者負担は、世帯の所得に応じて上限額が決まっています。多くの方が自己負担0円でご利用されています。詳しくはお気軽にご相談ください。</p>
       </div>
     </div>
   </div>
@@ -722,6 +790,9 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
         <a href="#" class="btn">募集要項・応募はこちら<svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="recruit-side">
+        <div class="ph recruit-ph" data-img="images/recruit.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261006_094216_697bc2f9-5254-4c9d-9851-6c2b18762050.png" data-label="写真：スタッフ（images/recruit.png）" role="img" aria-label="笑顔で話しながら歩くスタッフたち">
+          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+        </div>
         <p>募集職種</p>
         <ul>
           <li>生活支援員・世話人<svg class="ico"><use href="#i-arrow"/></svg></li>
@@ -748,11 +819,16 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
           <a href="#contact" class="btn btn-owner-outline">不動産会社様はこちら</a>
         </div>
       </div>
+      <div class="owner-side">
+      <div class="ph owner-ph" data-img="images/owner.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261006_094216_266046c2-1790-427c-9979-1162a41ca355.png" data-label="写真：改修後のリビング（images/owner.png）" role="img" aria-label="グループホームに改修した明るいリビング">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="#3f6496" stroke-width="1.2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg>
+      </div>
       <div class="merits">
         <div><svg class="ico"><use href="#i-key"/></svg><b>一括借上げ</b><span>空室リスクを気にせず安定収入</span></div>
         <div><svg class="ico"><use href="#i-doc"/></svg><b>長期契約</b><span>長期間の賃貸借契約が基本</span></div>
         <div><svg class="ico"><use href="#i-heart"/></svg><b>社会貢献</b><span>地域の福祉インフラに</span></div>
         <div><svg class="ico"><use href="#i-tool"/></svg><b>改修のご相談</b><span>必要な改修もご提案します</span></div>
+      </div>
       </div>
     </div>
   </div>
@@ -919,6 +995,15 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
       img.src = srcs[i];
     })(0);
   });
+
+  // メイン画像の動画（動きを減らす設定の方には再生しない）
+  var hv = document.querySelector('.hero-video');
+  if (hv && hv.dataset.src && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    hv.addEventListener('playing', function(){ hv.classList.add('on'); });
+    hv.addEventListener('error', function(){ hv.remove(); });
+    hv.src = hv.dataset.src;
+    var pr = hv.play(); if (pr && pr.catch) pr.catch(function(){});
+  }
 
   // スクロールでふわっと表示
   var items = document.querySelectorAll('.reveal');
