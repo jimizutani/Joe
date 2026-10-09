@@ -1,0 +1,151 @@
+<title>リタ株式会社 ロゴ案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<style>
+/* Layout: a proof sheet — four color-pair sections, each a row of five white artboards */
+:root {
+  --bg: #f6f5f2;
+  --fg: #1d2233;
+  --muted: #646a7a;
+  --line: #dcdad3;
+  --artboard: #ffffff;
+  --orange: #f08a24;
+  --yellow: #f7c41b;
+  --navy: #1e2c5c;
+  --teal: #16928a;
+  --font-ui: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-mark: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); line-height: 1.7; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 48px; }
+header { display: grid; gap: 8px; max-width: 60ch; }
+header p.eyebrow { margin: 0; font-size: 12px; letter-spacing: .14em; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); font-weight: 700; text-wrap: balance; line-height: 1.35; }
+header p { margin: 0; color: var(--muted); }
+
+section { display: grid; gap: 16px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.sec-head h2 { margin: 0; font-size: 19px; font-weight: 700; }
+.swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+.sw { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sw i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid var(--line); }
+
+.grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px)  { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+#sections { display: grid; gap: 56px; }
+.board { box-sizing: border-box; width: 100%; background: var(--artboard); border: 1px solid var(--line); border-radius: 6px; aspect-ratio: 1 / 1.08; max-width: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 14px; }
+.board svg.mark { width: 58%; height: auto; overflow: visible; }
+.word { font-family: var(--font-mark); font-weight: 700; font-size: clamp(12px, 1.5vw, 16px); letter-spacing: .08em; line-height: 1; text-align: center; }
+.word small { display: block; font-size: .62em; letter-spacing: .32em; margin-top: 6px; font-weight: 500; }
+figcaption { display: grid; gap: 2px; min-width: 0; }
+figcaption b { font-size: 14px; font-weight: 700; }
+figcaption b span { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 500; margin-right: 6px; }
+figcaption em { font-style: normal; font-size: 12px; color: var(--muted); line-height: 1.55; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">LOGO PROPOSAL ・ 20案</p>
+    <h1>リタ株式会社 ロゴデザイン案</h1>
+    <p>テーマは「人が支え合う」。2色の組み合わせ4パターンに、それぞれ5案ずつ。オレンジ・黄色・紺色を軸にしています。</p>
+  </header>
+  <div id="sections"></div>
+</div>
+
+<script>
+const C = { orange: "#f08a24", yellow: "#f7c41b", navy: "#1e2c5c", teal: "#16928a" };
+const W = 9; // stroke width
+const s = (d, c) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="${W}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const f = (d, c) => `<path d="${d}" fill="${c}"/>`;
+const ring = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${c}" stroke-width="${W}"/>`;
+const h = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
+
+const marks = {
+  hug: { name: "ハグ", note: "交差する腕で抱き合う二人。", svg: (a, b) =>
+    s("M20 88 Q24 48 62 56", a) + s("M80 88 Q76 48 38 56", b) + h(34, 26, 10, a) + h(66, 26, 10, b) },
+  ri: { name: "「リ」の二人", note: "カタカナ「リ」を、寄り添う二人で表現。", svg: (a, b) =>
+    h(30, 22, 9, a) + s("M30 40 L30 64", a) + h(64, 16, 9, b) + s("M64 34 C64 70 54 84 32 90", b) },
+  heart: { name: "ハートの輪", note: "二人の体と腕でハートを形づくる。", svg: (a, b) =>
+    s("M50 88 C14 62 14 42 44 46", a) + s("M50 88 C86 62 86 42 56 46", b) + h(32, 22, 10, a) + h(68, 22, 10, b) },
+  lean: { name: "支え合うA", note: "もたれ合い手をつなぐ姿が三角形の安定感に。", svg: (a, b) =>
+    s("M20 90 L44 42", a) + s("M80 90 L56 42", b) + s("M34 70 L50 70", a) + s("M50 70 L66 70", b) + h(40, 24, 9, a) + h(60, 24, 9, b) },
+  arch: { name: "アーチ", note: "頭上で手をつなぎ、門をつくる二人。", svg: (a, b) =>
+    h(28, 36, 9, a) + h(72, 36, 9, b) + s("M28 54 L28 90", a) + s("M72 54 L72 90", b) + s("M28 62 Q38 36 50 28", a) + s("M72 62 Q62 36 50 28", b) },
+
+  cradle: { name: "包む手", note: "大きな手のひらが、ひとりを受け止める。", svg: (a, b) =>
+    s("M18 46 Q50 104 82 46", b) + s("M18 46 L18 36", b) + s("M82 46 L82 36", b) + h(50, 40, 13, a) },
+  ring: { name: "手をつなぐ輪", note: "6人が輪になる、チームと地域のつながり。", svg: (a, b) => {
+    let out = ""; const R = 24, HR = 39;
+    for (let i = 0; i < 6; i++) {
+      const t = (i * 60 - 90) * Math.PI / 180, d = 24 * Math.PI / 180, c = i % 2 ? b : a;
+      const p = (ang, r) => `${(50 + r * Math.cos(ang)).toFixed(1)} ${(50 + r * Math.sin(ang)).toFixed(1)}`;
+      out += s(`M${p(t - d, R)} A${R} ${R} 0 0 1 ${p(t + d, R)}`, c) + h(...p(t, HR).split(" ").map(Number), 6.5, c);
+    }
+    return out; } },
+  yinyang: { name: "円環の絆", note: "互いを補い合う二つのかたちが一つの円に。", svg: (a, b) =>
+    f("M50 10 A40 40 0 0 0 50 90 A20 20 0 0 0 50 50 A20 20 0 0 1 50 10 Z", a) +
+    f("M50 10 A40 40 0 0 1 50 90 A20 20 0 0 1 50 50 A20 20 0 0 0 50 10 Z", b) +
+    h(50, 30, 6.5, "#fff") + h(50, 70, 6.5, "#fff") },
+  r: { name: "R モノグラム", note: "立つ人を、もう一人の腕がRの形で支える。", svg: (a, b) =>
+    s("M34 36 L34 90", a) + h(34, 16, 9, a) + s("M34 36 L54 36 A15 15 0 0 1 54 66 L40 66", b) + s("M52 66 L72 90", b) },
+  plus: { name: "ケアの十字", note: "縦の人と横に広がる腕。安心とケアの印。", svg: (a, b) =>
+    h(50, 16, 9, a) + s("M50 34 L50 90", a) + s("M18 54 L82 54", b) },
+
+  duo: { name: "ふたりのピクト", note: "重なり合う丸いシルエットで親しみを。", svg: (a, b) =>
+    f("M12 88 A24 24 0 0 1 60 88 Z", a) + h(36, 44, 11, a) + f("M40 88 A24 24 0 0 1 88 88 Z", b) + h(64, 44, 11, b) },
+  shoulder: { name: "肩車", note: "誰かの肩に乗って、より遠くを見る。", svg: (a, b) =>
+    f("M18 92 Q50 58 82 92 Z", b) + h(50, 56, 11, b) + s("M32 36 Q50 22 68 36", a) + h(50, 18, 9, a) },
+  sprout: { name: "芽吹き", note: "二枚の葉が人となり、共に育つ。", svg: (a, b) =>
+    f("M50 90 C22 84 14 54 30 40 C44 50 50 70 50 90 Z", a) + f("M50 90 C78 84 86 54 70 40 C56 50 50 70 50 90 Z", b) + h(30, 22, 8, a) + h(70, 22, 8, b) },
+  hand: { name: "手をつなぐ親子", note: "大きな人と小さな人が、手を取り合う。", svg: (a, b) =>
+    h(34, 20, 10, a) + s("M34 38 L34 90", a) + h(68, 46, 8, b) + s("M68 62 L68 90", b) + s("M34 56 Q44 70 51 70", a) + s("M51 70 L68 70", b) },
+  infinity: { name: "無限の絆", note: "∞のループで、終わらない支え合いを表現。", svg: (a, b) =>
+    s("M50 60 C40 40 14 40 14 60 C14 80 40 80 50 60", a) + s("M50 60 C60 40 86 40 86 60 C86 80 60 80 50 60", b) + h(30, 26, 9, a) + h(70, 26, 9, b) },
+
+  reach: { name: "差し伸べる手", note: "上の人が手を伸ばし、下の人を引き上げる。", svg: (a, b) =>
+    h(66, 18, 9, a) + s("M66 36 L66 62", a) + s("M66 44 L50 54", a) + h(32, 48, 9, b) + s("M32 66 L32 90", b) + s("M32 72 L48 58", b) },
+  links: { name: "つながる輪", note: "鎖のように結ばれた二つの輪と二人。", svg: (a, b) =>
+    ring(40, 60, 22, a) + ring(60, 60, 22, b) + h(36, 18, 8, a) + h(64, 18, 8, b) },
+  back: { name: "背中合わせ", note: "背中を預け合える、信頼の関係。", svg: (a, b) =>
+    s("M42 40 Q50 66 30 90", a) + s("M58 40 Q50 66 70 90", b) + h(38, 22, 9, a) + h(62, 22, 9, b) },
+  roof: { name: "守る屋根", note: "屋根のように腕を広げ、ひとりを守る。", svg: (a, b) =>
+    s("M14 54 L50 20 L86 54", b) + h(50, 56, 10, a) + f("M30 92 Q50 64 70 92 Z", a) },
+  embrace: { name: "想いを抱く", note: "両腕で大切な想い（ハート）を抱える。", svg: (a, b) =>
+    h(50, 18, 9, b) + s("M20 40 Q18 90 50 90 Q82 90 80 40", b) +
+    f("M50 76 C34 66 32 52 42 50 C46 49 49 52 50 55 C51 52 54 49 58 50 C68 52 66 66 50 76 Z", a) },
+};
+
+const groups = [
+  { title: "オレンジ × 紺", cols: ["orange", "navy"], word: "navy", ids: ["hug", "ri", "heart", "lean", "arch"] },
+  { title: "黄色 × 紺", cols: ["yellow", "navy"], word: "navy", ids: ["cradle", "ring", "yinyang", "r", "plus"] },
+  { title: "オレンジ × 黄色", cols: ["orange", "yellow"], word: "orange", ids: ["duo", "shoulder", "sprout", "hand", "infinity"] },
+  { title: "オレンジ × ティール", cols: ["orange", "teal"], word: "teal", ids: ["reach", "links", "back", "roof", "embrace"] },
+];
+const label = { orange: "オレンジ", yellow: "黄色", navy: "紺", teal: "ティール" };
+
+let n = 0;
+document.getElementById("sections").innerHTML = groups.map(g => {
+  const [a, b] = g.cols.map(k => C[k]);
+  const cards = g.ids.map(id => {
+    const m = marks[id]; n++;
+    return `<figure>
+      <div class="board" role="img" aria-label="案${n} ${m.name}">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">${m.svg(a, b)}</svg>
+        <div class="word" style="color:${C[g.word]}">リタ株式会社<small>RITA Inc.</small></div>
+      </div>
+      <figcaption><b><span>No.${String(n).padStart(2, "0")}</span>${m.name}</b><em>${m.note}</em></figcaption>
+    </figure>`;
+  }).join("");
+  const sw = g.cols.map(k => `<span class="sw"><i style="background:${C[k]}"></i>${label[k]} ${C[k].toUpperCase()}</span>`).join("");
+  return `<section><div class="sec-head"><h2>${g.title}</h2><div class="swatches">${sw}</div></div><div class="grid">${cards}</div></section>`;
+}).join("");
+</script>
