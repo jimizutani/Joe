@@ -95,8 +95,8 @@ const marks = {
     f("M50 10 A40 40 0 0 0 50 90 A20 20 0 0 0 50 50 A20 20 0 0 1 50 10 Z", a) +
     f("M50 10 A40 40 0 0 1 50 90 A20 20 0 0 1 50 50 A20 20 0 0 0 50 10 Z", b) +
     h(50, 30, 6.5, "#fff") + h(50, 70, 6.5, "#fff") },
-  r: { name: "R モノグラム", note: "立つ人を、もう一人の腕がRの形で支える。", svg: (a, b) =>
-    s("M34 36 L34 90", a) + h(34, 16, 9, a) + s("M34 36 L54 36 A15 15 0 0 1 54 66 L40 66", b) + s("M52 66 L72 90", b) },
+  l: { name: "L モノグラム", note: "立つ人の足もとを、もう一人がLの形で支える。", svg: (a, b) =>
+    h(34, 16, 9, a) + s("M34 36 L34 74", a) + s("M34 88 L72 88", b) + s("M72 88 L72 70", b) + h(72, 52, 9, b) },
   plus: { name: "ケアの十字", note: "縦の人と横に広がる腕。安心とケアの印。", svg: (a, b) =>
     h(50, 16, 9, a) + s("M50 34 L50 90", a) + s("M18 54 L82 54", b) },
 
@@ -126,7 +126,7 @@ const marks = {
 
 const groups = [
   { title: "オレンジ × 紺", cols: ["orange", "navy"], word: "navy", ids: ["hug", "ri", "heart", "lean", "arch"] },
-  { title: "黄色 × 紺", cols: ["yellow", "navy"], word: "navy", ids: ["cradle", "ring", "yinyang", "r", "plus"] },
+  { title: "黄色 × 紺", cols: ["yellow", "navy"], word: "navy", ids: ["cradle", "ring", "yinyang", "l", "plus"] },
   { title: "オレンジ × 黄色", cols: ["orange", "yellow"], word: "orange", ids: ["duo", "shoulder", "sprout", "hand", "infinity"] },
   { title: "オレンジ × ティール", cols: ["orange", "teal"], word: "teal", ids: ["reach", "links", "back", "roof", "embrace"] },
 ];
@@ -140,7 +140,7 @@ document.getElementById("sections").innerHTML = groups.map(g => {
     return `<figure>
       <div class="board" role="img" aria-label="案${n} ${m.name}">
         <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">${m.svg(a, b)}</svg>
-        <div class="word" style="color:${C[g.word]}">リタ株式会社<small>RITA Inc.</small></div>
+        <div class="word" style="color:${C[g.word]}">リタ株式会社<small>LITA Inc.</small></div>
       </div>
       <figcaption><b><span>No.${String(n).padStart(2, "0")}</span>${m.name}</b><em>${m.note}</em></figcaption>
     </figure>`;
