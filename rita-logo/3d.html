@@ -1,8 +1,8 @@
-<title>リタ株式会社 ロゴ案</title>
+<title>Lita ロゴ案 立体版</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Nunito:wght@800;900&display=swap">
 <style>
-/* Layout: a proof sheet — four color-pair sections, each a row of five white artboards */
+/* Layout: a proof sheet — four color-pair sections, each a row of five white artboards; marks shaded light→dark for depth */
 :root {
   --bg: #f6f5f2;
   --fg: #1d2233;
@@ -14,7 +14,7 @@
   --navy: #1e2c5c;
   --teal: #16928a;
   --font-ui: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
-  --font-mark: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Noto Sans JP", sans-serif;
+  --font-mark: "Nunito", "Arial Rounded MT Bold", "Hiragino Maru Gothic ProN", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
@@ -44,8 +44,8 @@ figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 
 .board { box-sizing: border-box; width: 100%; background: var(--artboard); border: 1px solid var(--line); border-radius: 6px; aspect-ratio: 1 / 1.08; max-width: 100%;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 14px; }
 .board svg.mark { width: 58%; height: auto; overflow: visible; }
-.word { font-family: var(--font-mark); font-weight: 700; font-size: clamp(12px, 1.5vw, 16px); letter-spacing: .08em; line-height: 1; text-align: center; }
-.word small { display: block; font-size: .62em; letter-spacing: .32em; margin-top: 6px; font-weight: 500; }
+.word { font-family: var(--font-mark); font-weight: 900; font-size: clamp(24px, 2.8vw, 32px); letter-spacing: .02em; line-height: 1.1; padding-bottom: .08em;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 figcaption { display: grid; gap: 2px; min-width: 0; }
 figcaption b { font-size: 14px; font-weight: 700; }
 figcaption b span { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 500; margin-right: 6px; }
@@ -54,9 +54,9 @@ figcaption em { font-style: normal; font-size: 12px; color: var(--muted); line-h
 
 <div class="wrap">
   <header>
-    <p class="eyebrow">LOGO PROPOSAL ・ 20案</p>
-    <h1>リタ株式会社 ロゴデザイン案</h1>
-    <p>テーマは「人が支え合う」。2色の組み合わせ4パターンに、それぞれ5案ずつ。オレンジ・黄色・紺色を軸にしています。</p>
+    <p class="eyebrow">LOGO PROPOSAL ・ 3D GRADIENT ・ 20案</p>
+    <h1>Lita ロゴデザイン案 立体版</h1>
+    <p>テーマは「人が支え合う」。2色の組み合わせ4パターンに、それぞれ5案ずつ。各色の明暗グラデーションで立体感を出し、マークの下に「Lita」を置いています。</p>
   </header>
   <div id="sections"></div>
 </div>
@@ -64,10 +64,26 @@ figcaption em { font-style: normal; font-size: 12px; color: var(--muted); line-h
 <script>
 const C = { orange: "#f08a24", yellow: "#f7c41b", navy: "#1e2c5c", teal: "#16928a" };
 const W = 9; // stroke width
-const s = (d, c) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="${W}" stroke-linecap="round" stroke-linejoin="round"/>`;
-const f = (d, c) => `<path d="${d}" fill="${c}"/>`;
-const ring = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${c}" stroke-width="${W}"/>`;
-const h = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
+// A color is { lin, rad } (gradient refs); heads use the radial "sphere", lines and shapes the linear sheen
+const L = c => typeof c === "string" ? c : c.lin;
+const Rd = c => typeof c === "string" ? c : c.rad;
+const s = (d, c) => `<path d="${d}" fill="none" stroke="${L(c)}" stroke-width="${W}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const f = (d, c) => `<path d="${d}" fill="${L(c)}"/>`;
+const ring = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${L(c)}" stroke-width="${W}"/>`;
+const h = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${Rd(c)}"/>`;
+
+const mix = (hex, to, amt) => "#" + [1, 3, 5].map(i => {
+  const v = parseInt(hex.slice(i, i + 2), 16), t = to === "w" ? 255 : 0;
+  return Math.round(v + (t - v) * amt).toString(16).padStart(2, "0");
+}).join("");
+const shade = hex => ({ hi: mix(hex, "w", .45), base: hex, lo: mix(hex, "k", .32) });
+function defs(id, key, hex) {
+  const p = shade(hex);
+  return `<linearGradient id="l${id}${key}" gradientUnits="userSpaceOnUse" x1="12" y1="8" x2="88" y2="96">
+      <stop offset="0" stop-color="${p.hi}"/><stop offset=".5" stop-color="${p.base}"/><stop offset="1" stop-color="${p.lo}"/></linearGradient>
+    <radialGradient id="r${id}${key}" cx=".34" cy=".3" r=".8">
+      <stop offset="0" stop-color="${mix(hex, "w", .6)}"/><stop offset=".45" stop-color="${p.base}"/><stop offset="1" stop-color="${p.lo}"/></radialGradient>`;
+}
 
 const marks = {
   hug: { name: "ハグ", note: "交差する腕で抱き合う二人。", svg: (a, b) =>
@@ -134,13 +150,18 @@ const label = { orange: "オレンジ", yellow: "黄色", navy: "紺", teal: "�
 
 let n = 0;
 document.getElementById("sections").innerHTML = groups.map(g => {
-  const [a, b] = g.cols.map(k => C[k]);
+  const [ha, hb] = g.cols.map(k => C[k]);
   const cards = g.ids.map(id => {
     const m = marks[id]; n++;
+    const a = { lin: `url(#l${n}a)`, rad: `url(#r${n}a)` }, b = { lin: `url(#l${n}b)`, rad: `url(#r${n}b)` };
+    const w = shade(C[g.word]);
     return `<figure>
-      <div class="board" role="img" aria-label="案${n} ${m.name}">
-        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">${m.svg(a, b)}</svg>
-        <div class="word" style="color:${C[g.word]}">リタ株式会社<small>LITA Inc.</small></div>
+      <div class="board" role="img" aria-label="Lita ロゴ案${n} ${m.name}">
+        <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>${defs(n, "a", ha)}${defs(n, "b", hb)}
+            <filter id="sh${n}" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="2.5" stdDeviation="2" flood-color="#141a33" flood-opacity=".22"/></filter></defs>
+          <g filter="url(#sh${n})">${m.svg(a, b)}</g></svg>
+        <div class="word" style="background-image:linear-gradient(135deg, ${w.hi}, ${w.base} 50%, ${w.lo})">Lita</div>
       </div>
       <figcaption><b><span>No.${String(n).padStart(2, "0")}</span>${m.name}</b><em>${m.note}</em></figcaption>
     </figure>`;
