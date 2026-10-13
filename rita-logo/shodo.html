@@ -40,6 +40,16 @@ header p { margin: 0; color: var(--muted); }
 .chip i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid var(--line); }
 .ask { font-size: 13px; color: var(--muted); }
 .ask b { color: var(--fg); font-weight: 500; }
+.kokoro { display: grid; gap: 16px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.kokoro-head { display: grid; gap: 6px; }
+.kokoro-head h2 { margin: 0; font-size: 22px; font-weight: 700; }
+.kokoro-head p { margin: 0; color: var(--muted); max-width: 60ch; }
+.kgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 720px) { .kgrid { grid-template-columns: minmax(0, 1fr); } }
+.kgrid figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.kgrid figcaption { display: grid; gap: 2px; }
+.kgrid figcaption b { font-size: 15px; }
+.kgrid figcaption em { font-style: normal; font-size: 13px; color: var(--muted); }
 </style>
 
 <!-- Shared ink filters: rough = bleeding edge, dry = rough edge + dry-brush streaks -->
@@ -66,11 +76,59 @@ header p { margin: 0; color: var(--muted); }
 
 <div class="wrap">
   <header>
-    <p class="eyebrow">LOGO PROPOSAL ・ 書道風 ・ 5案</p>
+    <p class="eyebrow">LOGO PROPOSAL ・ 書道風 ・ 5案 ＋ 試し書き</p>
     <h1>Lita 書道風ロゴ案</h1>
     <p>書道家への依頼を見すえた、筆文字の方向性を探るための参考案です。どれも2色で、のびやかで温かい筆づかいをイメージしています。</p>
     <p class="note">これは書家ご本人の作品ではなく、依頼時にイメージを共有するための叩き台です。実際の文字は、依頼先の書家に書き下ろしていただく前提です。</p>
   </header>
+
+  <section class="kokoro">
+    <div class="kokoro-head">
+      <h2>「利他の心」試し書き</h2>
+      <p>依頼予定の言葉「利他の心」を、のびのびとした筆づかいのイメージで3通りに組みました。文字ごとに大きさと傾きを変えて、書の勢いを出しています。</p>
+    </div>
+    <div class="kgrid">
+      <figure>
+        <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="利他の心 A 躍動">
+          <g font-family="'Yuji Boku', serif" fill="#1e2c5c" filter="url(#rough)" text-anchor="middle">
+            <text x="58" y="88" font-size="76" transform="rotate(-7 58 60)">利</text>
+            <text x="134" y="98" font-size="66" transform="rotate(5 134 72)">他</text>
+            <text x="60" y="160" font-size="36" fill="#f08a24" transform="rotate(-10 60 148)">の</text>
+            <text x="126" y="178" font-size="92" transform="rotate(-4 126 146)">心</text>
+          </g>
+          <circle cx="166" cy="114" r="5" fill="#f08a24" filter="url(#splash)"/>
+        </svg></div>
+        <figcaption><b>A 躍動</b><em>紺 × オレンジ。「の」だけを小さく色を変え、リズムを出す。</em></figcaption>
+      </figure>
+      <figure>
+        <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="利他の心 B 縦書き">
+          <g font-family="'Yuji Boku', serif" fill="#1e2c5c" filter="url(#rough)" text-anchor="middle">
+            <text x="126" y="72" font-size="62">利</text>
+            <text x="128" y="136" font-size="58" transform="rotate(3 128 116)">他</text>
+            <text x="70" y="104" font-size="34" transform="rotate(-6 70 94)">の</text>
+            <text x="70" y="176" font-size="70" transform="rotate(-3 70 152)">心</text>
+          </g>
+          <g transform="translate(118 160) rotate(-4)" filter="url(#rough)">
+            <rect width="24" height="24" rx="3" fill="#f08a24"/>
+            <text x="12" y="16" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="9" fill="#fffdf8">Lita</text>
+          </g>
+        </svg></div>
+        <figcaption><b>B 縦書き</b><em>紺 × オレンジ。右から左へ読む書作品の形。落款に「Lita」。</em></figcaption>
+      </figure>
+      <figure>
+        <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="利他の心 C 心を大きく">
+          <text x="112" y="150" text-anchor="middle" font-family="'Yuji Boku', serif" font-size="140" fill="#f08a24" filter="url(#rough)" transform="rotate(-5 112 100)">心</text>
+          <g font-family="'Yuji Boku', serif" font-size="30" fill="#1e2c5c" filter="url(#rough)" text-anchor="middle">
+            <text x="30" y="58">利</text>
+            <text x="32" y="94">他</text>
+            <text x="30" y="126" font-size="22">の</text>
+          </g>
+          <circle cx="160" cy="56" r="6" fill="#f08a24" filter="url(#splash)"/>
+        </svg></div>
+        <figcaption><b>C 心を大きく</b><em>オレンジ × 紺。主役の「心」を大きく、「利他の」を小さく添える。</em></figcaption>
+      </figure>
+    </div>
+  </section>
 
   <div class="list">
 
