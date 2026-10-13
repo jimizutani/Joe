@@ -1,0 +1,136 @@
+<title>Lita 躍動の筆文字</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: one hero artboard for the lead version, then the color variations in a row of three */
+:root {
+  --bg: #f5f3ee;
+  --fg: #1d2233;
+  --muted: #646a7a;
+  --line: #dcd8cf;
+  --paper: #fffdf8;
+  --font-ui: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); line-height: 1.75; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 32px; }
+header { display: grid; gap: 8px; max-width: 62ch; }
+.eyebrow { margin: 0; font-size: 12px; letter-spacing: .14em; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); font-weight: 700; line-height: 1.35; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); }
+.note { font-size: 13px; border-left: 3px solid var(--line); padding-left: 12px; }
+.paper { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; max-width: 100%; }
+.paper svg { display: block; width: 100%; height: auto; }
+.hero { max-width: 640px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 720px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+figcaption { display: grid; gap: 2px; }
+figcaption b { font-size: 15px; }
+figcaption em { font-style: normal; font-size: 13px; color: var(--muted); }
+.points { margin: 0; padding-left: 1.2em; color: var(--muted); font-size: 14px; display: grid; gap: 4px; max-width: 62ch; }
+.points b { color: var(--fg); font-weight: 500; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.35 0.03" numOctaves="2" seed="11" result="s"/>
+      <feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -4 3.3" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+    <filter id="edge" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="2" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+    <filter id="splash" x="-40%" y="-40%" width="180%" height="180%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="12" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
+    </filter>
+    <filter id="sweep" x="-10%" y="-20%" width="120%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.6" numOctaves="2" seed="9" result="s"/>
+      <feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3 2.2" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+    <!-- リ: left stroke ends in a はね (upward flick); right stroke sweeps down-left into a sharp 払い -->
+    <g id="ri">
+      <path d="M28 44 C32 32 50 32 52 46 C54 66 54 86 54 102 C60 94 68 86 78 78 C72 96 62 112 50 126 C44 132 36 128 36 118 C36 96 34 72 30 56 C28 52 27 48 28 44 Z"/>
+      <path d="M80 30 C88 18 108 22 106 40 C104 92 100 132 78 158 C66 172 50 182 30 190 C48 174 62 160 70 144 C84 118 86 82 82 50 C81 42 78 36 80 30 Z"/>
+    </g>
+    <!-- タ: first ノ, then the 横画 turning into a long 払い, and a dot that lands in the middle -->
+    <g id="ta">
+      <path d="M156 22 C166 14 180 22 174 36 C162 60 144 84 116 104 C132 82 148 58 152 40 C153 32 152 26 156 22 Z"/>
+      <path d="M144 58 C172 52 200 44 218 40 C232 36 240 46 234 58 C216 104 182 156 108 194 C160 150 194 106 210 66 C190 68 170 70 150 72 C140 72 136 60 144 58 Z"/>
+    </g>
+    <path id="dot" d="M150 92 C160 86 176 96 190 114 C194 124 184 130 176 122 C166 112 156 104 150 98 C147 96 147 94 150 92 Z"/>
+    <g id="drops">
+      <circle cx="92" cy="80" r="2.6"/><circle cx="62" cy="70" r="1.8"/><circle cx="20" cy="192" r="2.2"/>
+      <circle cx="98" cy="196" r="1.6"/><circle cx="242" cy="34" r="2.4"/><circle cx="196" cy="132" r="1.5"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">LOGO PROPOSAL ・ 筆文字 ・ リタ</p>
+    <h1>Lita 躍動の筆文字</h1>
+    <p>「リタ」を、勢いのある大きな筆づかいのイメージで描きました。「リ」の左の線は最後に右上へはね、右の線と「タ」の線は左下へ長く払っています。紙に散った墨の点で、書いたときの勢いを残しています。</p>
+    <p class="note">書家ご本人の作品ではなく、依頼時にイメージを伝えるための叩き台です。</p>
+  </header>
+
+  <figure class="hero">
+    <div class="paper"><svg viewBox="-10 0 270 236" role="img" aria-label="リタ 紺とオレンジ">
+      <g fill="#1e2c5c" filter="url(#ink)"><use href="#ri"/><use href="#ta"/></g>
+      <use href="#dot" fill="#f08a24" filter="url(#ink)"/>
+      <use href="#drops" fill="#1e2c5c" filter="url(#splash)"/>
+      <text x="236" y="226" text-anchor="end" font-family="'Kaushan Script', cursive" font-size="22" fill="#f08a24">Lita</text>
+    </svg></div>
+    <figcaption><b>A 紺 × オレンジ（基本形）</b><em>墨の代わりに紺で書き、「タ」の中の点だけをオレンジに。人の心に灯る火のような一点です。</em></figcaption>
+  </figure>
+
+  <div class="grid">
+    <figure>
+      <div class="paper"><svg viewBox="-10 0 270 236" role="img" aria-label="リタ オレンジと紺">
+        <g fill="#f08a24" filter="url(#ink)"><use href="#ri"/><use href="#ta"/><use href="#dot"/></g>
+        <use href="#drops" fill="#f08a24" filter="url(#splash)"/>
+        <g transform="translate(206 194) rotate(-5)">
+          <rect width="34" height="34" rx="3" fill="#1e2c5c" filter="url(#edge)"/>
+          <text x="17" y="22" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="12" fill="#fffdf8">Lita</text>
+        </g>
+      </svg></div>
+      <figcaption><b>B オレンジ × 紺</b><em>文字を明るいオレンジで書き、紺のはんこに「Lita」。元気で親しみやすい印象。</em></figcaption>
+    </figure>
+    <figure>
+      <div class="paper"><svg viewBox="-10 0 270 236" role="img" aria-label="リタ 紺と黄色">
+        <circle cx="166" cy="96" r="70" fill="#f7c41b" filter="url(#splash)"/>
+        <g fill="#1e2c5c" filter="url(#ink)"><use href="#ri"/><use href="#ta"/><use href="#dot"/></g>
+        <use href="#drops" fill="#1e2c5c" filter="url(#splash)"/>
+        <text x="236" y="226" text-anchor="end" font-family="'Kaushan Script', cursive" font-size="22" fill="#1e2c5c">Lita</text>
+      </svg></div>
+      <figcaption><b>C 紺 × 黄色</b><em>「タ」の後ろに黄色の太陽。明るい場所へ向かう勢いを表します。</em></figcaption>
+    </figure>
+    <figure>
+      <div class="paper"><svg viewBox="-10 0 270 236" role="img" aria-label="リタ 紺と黄色の払い">
+        <path fill="#f7c41b" filter="url(#sweep)" d="M-2 206 C70 176 170 168 252 178 C244 186 230 190 216 190 C150 186 80 196 6 220 C-4 220 -8 212 -2 206 Z"/>
+        <g fill="#1e2c5c" filter="url(#ink)"><use href="#ri"/><use href="#ta"/><use href="#dot"/></g>
+        <use href="#drops" fill="#1e2c5c" filter="url(#splash)"/>
+        <text x="236" y="230" text-anchor="end" font-family="'Kaushan Script', cursive" font-size="20" fill="#1e2c5c">Lita</text>
+      </svg></div>
+      <figcaption><b>D 紺 × 黄色の払い</b><em>足もとに黄色の太い一本線。文字を下から支える土台のイメージ。</em></figcaption>
+    </figure>
+  </div>
+
+  <ul class="points">
+    <li><b>はね：</b>「リ」の左の線の終わりを、右上へ鋭く跳ね上げています。</li>
+    <li><b>払い：</b>「リ」の右の線と「タ」の二画目を、左下へ細くなるまで長く伸ばしています。</li>
+    <li><b>かすれ：</b>線の中に細いすじを入れ、筆の毛の跡を出しています。</li>
+  </ul>
+</div>
