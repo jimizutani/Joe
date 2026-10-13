@@ -1,0 +1,160 @@
+<title>Lita 書道風ロゴ案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Yuji+Syuku&family=Kaushan+Script&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: one row per proposal — a large white "半紙" artboard beside its concept notes; stacks on phones */
+:root {
+  --bg: #f5f3ee;
+  --fg: #1d2233;
+  --muted: #646a7a;
+  --line: #dcd8cf;
+  --paper: #fffdf8;
+  --font-ui: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #14161d; --fg: #eceae4; --muted: #a2a6b2; --line: #2c303b; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); line-height: 1.75; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 40px; }
+header { display: grid; gap: 8px; max-width: 62ch; }
+.eyebrow { margin: 0; font-size: 12px; letter-spacing: .14em; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); font-weight: 700; line-height: 1.35; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); }
+.note { font-size: 13px; border-left: 3px solid var(--line); padding-left: 12px; }
+
+.list { display: grid; gap: 28px; }
+.item { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 28px; align-items: center;
+  padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.item:last-child { border-bottom: 0; }
+@media (max-width: 720px) { .item { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+.paper { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; aspect-ratio: 1; max-width: 100%; }
+.paper svg { display: block; width: 100%; height: 100%; }
+.text { display: grid; gap: 8px; min-width: 0; }
+.text .no { font-size: 12px; letter-spacing: .12em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.text h2 { margin: 0; font-size: 21px; font-weight: 700; }
+.text p { margin: 0; max-width: 46ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.chip i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid var(--line); }
+.ask { font-size: 13px; color: var(--muted); }
+.ask b { color: var(--fg); font-weight: 500; }
+</style>
+
+<!-- Shared ink filters: rough = bleeding edge, dry = rough edge + dry-brush streaks -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+    <filter id="dry" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.7" numOctaves="2" seed="9" result="s"/>
+      <feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3 2.2" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+    <filter id="splash" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="12" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="16"/>
+    </filter>
+    <mask id="ensoGap"><rect width="200" height="200" fill="#fff"/><path d="M100 96 L170 0 L200 0 L200 40 Z" fill="#000"/></mask>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">LOGO PROPOSAL ・ 書道風 ・ 5案</p>
+    <h1>Lita 書道風ロゴ案</h1>
+    <p>書道家への依頼を見すえた、筆文字の方向性を探るための参考案です。どれも2色で、のびやかで温かい筆づかいをイメージしています。</p>
+    <p class="note">これは書家ご本人の作品ではなく、依頼時にイメージを共有するための叩き台です。実際の文字は、依頼先の書家に書き下ろしていただく前提です。</p>
+  </header>
+
+  <div class="list">
+
+    <article class="item">
+      <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="案1 円相とリタ">
+        <g mask="url(#ensoGap)" filter="url(#dry)">
+          <path fill-rule="evenodd" fill="#f08a24" d="M100 18 A78 78 0 1 1 99.9 18 Z M104 26 A66 66 0 1 0 104.1 26 Z"/>
+        </g>
+        <text x="100" y="122" text-anchor="middle" font-family="'Yuji Boku', serif" font-size="70" fill="#1e2c5c" filter="url(#rough)">リタ</text>
+        <text x="100" y="152" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="17" fill="#1e2c5c">Lita</text>
+      </svg></div>
+      <div class="text">
+        <span class="no">No.01</span>
+        <h2>円相とリタ</h2>
+        <p>ひと筆で描く円「円相」で、人と人が支え合って輪になる様子を表します。円の中に筆文字の「リタ」を置いた、いちばん王道の構成です。</p>
+        <div class="chips"><span class="chip"><i style="background:#f08a24"></i>オレンジ（円相）</span><span class="chip"><i style="background:#1e2c5c"></i>紺（文字）</span></div>
+        <p class="ask"><b>依頼時のポイント：</b>円相のかすれと、「リタ」の丸みのある筆づかい。</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="案2 利他">
+        <circle cx="138" cy="70" r="34" fill="#f7c41b" filter="url(#splash)"/>
+        <text x="100" y="124" text-anchor="middle" font-family="'Yuji Syuku', serif" font-size="78" fill="#1e2c5c" filter="url(#rough)">利他</text>
+        <text x="100" y="158" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="17" fill="#1e2c5c">Lita</text>
+      </svg></div>
+      <div class="text">
+        <span class="no">No.02</span>
+        <h2>利他（りた）</h2>
+        <p>社名の「リタ」を、人のために生きる「利他」の文字で表現します。後ろに置いた黄色のにじみは、周りを照らす太陽のイメージです。</p>
+        <div class="chips"><span class="chip"><i style="background:#f7c41b"></i>黄色（にじみ）</span><span class="chip"><i style="background:#1e2c5c"></i>紺（文字）</span></div>
+        <p class="ask"><b>依頼時のポイント：</b>「利他」の意味を込めた力強さと、やわらかさの両立。</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="案3 人">
+        <circle cx="100" cy="92" r="58" fill="#f7c41b" opacity=".85" filter="url(#splash)"/>
+        <text x="100" y="140" text-anchor="middle" font-family="'Yuji Boku', serif" font-size="128" fill="#f08a24" filter="url(#rough)">人</text>
+        <text x="100" y="178" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="20" fill="#f08a24">Lita</text>
+      </svg></div>
+      <div class="text">
+        <span class="no">No.03</span>
+        <h2>人</h2>
+        <p>二本の線が互いにもたれ合って立つ「人」の字を、支え合いの象徴として大きく書きます。黄色の丸が、その二人を包み込みます。</p>
+        <div class="chips"><span class="chip"><i style="background:#f08a24"></i>オレンジ（文字）</span><span class="chip"><i style="background:#f7c41b"></i>黄色（背景の丸）</span></div>
+        <p class="ask"><b>依頼時のポイント：</b>左右の払いが寄りかかり合う形を、少しユーモラスに。</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="案4 縦書きの利他と落款">
+        <g font-family="'Yuji Syuku', serif" font-size="66" fill="#1e2c5c" filter="url(#rough)" text-anchor="middle">
+          <text x="88" y="86">利</text>
+          <text x="88" y="156">他</text>
+        </g>
+        <g transform="translate(124 128) rotate(-4)" filter="url(#rough)">
+          <rect width="30" height="30" rx="3" fill="#f08a24"/>
+          <text x="15" y="20" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="11" fill="#fffdf8">Lita</text>
+        </g>
+      </svg></div>
+      <div class="text">
+        <span class="no">No.04</span>
+        <h2>縦書きの利他と落款</h2>
+        <p>書作品のように「利他」を縦に書き、オレンジの落款（はんこ）に「Lita」を入れます。のれんや名刺の縦型レイアウトにもなじみます。</p>
+        <div class="chips"><span class="chip"><i style="background:#1e2c5c"></i>紺（文字）</span><span class="chip"><i style="background:#f08a24"></i>オレンジ（落款）</span></div>
+        <p class="ask"><b>依頼時のポイント：</b>落款のデザインもあわせて依頼するとまとまりが出ます。</p>
+      </div>
+    </article>
+
+    <article class="item">
+      <div class="paper"><svg viewBox="0 0 200 200" role="img" aria-label="案5 筆記体のLita">
+        <path fill="#f7c41b" filter="url(#dry)" d="M24 132 C70 112 140 108 182 118 C176 124 168 126 160 126 C118 124 74 132 30 146 C24 146 20 138 24 132 Z"/>
+        <text x="102" y="118" text-anchor="middle" font-family="'Kaushan Script', cursive" font-size="64" fill="#1e2c5c" filter="url(#rough)">Lita</text>
+        <text x="102" y="168" text-anchor="middle" font-family="'Yuji Syuku', serif" font-size="15" letter-spacing="6" fill="#1e2c5c">利他</text>
+      </svg></div>
+      <div class="text">
+        <span class="no">No.05</span>
+        <h2>筆の Lita</h2>
+        <p>英字の「Lita」を筆で書き、下に黄色の太い払いを一本引きます。海外の方や若い世代にも伝わりやすい、軽やかな案です。</p>
+        <div class="chips"><span class="chip"><i style="background:#1e2c5c"></i>紺（文字）</span><span class="chip"><i style="background:#f7c41b"></i>黄色（払い）</span></div>
+        <p class="ask"><b>依頼時のポイント：</b>アルファベットを和の筆づかいで書いてもらうこと。</p>
+      </div>
+    </article>
+
+  </div>
+</div>
