@@ -511,8 +511,8 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
       </div>
     </div>
     <div class="reveal" style="position:relative">
-      <div class="hero-photo ph" data-img="images/hero.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261005_222803_36192e4d-9679-4ee3-b858-0a3f83e0e9a4.png" data-label="写真：入居者様とスタッフの笑顔（images/hero.png）" role="img" aria-label="入居者様とスタッフが笑い合う様子">
-        <video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261006_094239_95d88893-728d-4c90-b78e-d99376e97e52.mp4"></video>
+      <div class="hero-photo ph" data-img="images/hero.png" data-img-fallback="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261014_062707_dec39ee5-f62d-4522-8db1-3ffe27c36541.png" data-label="写真：入居者様とスタッフの笑顔（images/hero.png）" role="img" aria-label="支援員に支えられて立つ練習をする入居者様と、パズルを完成させて喜び合う入居者様と支援員">
+        <video class="hero-video" muted playsinline preload="none" aria-hidden="true" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261014_064723_4570bfde-579b-4c80-9a8f-214489a3660a.mp4 https://d8j0ntlcm91z4.cloudfront.net/user_3KCbElYLTsh1mwAEmr4GD4J8mK0/hf_20261014_064723_7f270d60-8b33-4c87-8a15-f80e545fbe48.mp4"></video>
         <svg class="ph-icon" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 18 14 56h12v44h68V56h12L60 18Z" fill="#1f7a6d"/><circle cx="48" cy="72" r="9" fill="#fff"/><circle cx="72" cy="72" r="9" fill="#f28c38"/><path d="M34 100c0-12 6-18 14-18s14 6 14 18M58 100c0-12 6-18 14-18s14 6 14 18" fill="#fff"/></svg>
       </div>
       <div class="hero-badge"><b>24h</b><span>夜間もスタッフが常駐<br>365日の安心を</span></div>
@@ -996,13 +996,23 @@ footer{background:var(--foot-bg);color:var(--foot-text);padding:64px 0 32px;font
     })(0);
   });
 
-  // メイン画像の動画（動きを減らす設定の方には再生しない）
+  // メイン画像の動画：複数本を順番にくり返し再生（動きを減らす設定の方には再生しない）
   var hv = document.querySelector('.hero-video');
-  if (hv && hv.dataset.src && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  var clips = hv && hv.dataset.src ? hv.dataset.src.split(/\s+/).filter(Boolean) : [];
+  if (clips.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var cur = 0;
+    var playClip = function(i){
+      cur = i % clips.length;
+      hv.src = clips[cur];
+      var pr = hv.play(); if (pr && pr.catch) pr.catch(function(){});
+    };
     hv.addEventListener('playing', function(){ hv.classList.add('on'); });
-    hv.addEventListener('error', function(){ hv.remove(); });
-    hv.src = hv.dataset.src;
-    var pr = hv.play(); if (pr && pr.catch) pr.catch(function(){});
+    hv.addEventListener('ended', function(){ playClip(cur + 1); });
+    hv.addEventListener('error', function(){
+      clips.splice(cur, 1);
+      if (clips.length) playClip(cur); else hv.remove();
+    });
+    playClip(0);
   }
 
   // スクロールでふわっと表示
